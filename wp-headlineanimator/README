@@ -36,8 +36,7 @@ Contents:
 =================
  1 - Upload the contents of the wp-headlineanimator directory into your
      wordpress plugin directory.
- 2 - make sure that wp-headlineanimator/tmp is writeable for wordpress
-     as some temp-data is stored there
+ 2 - make sure that the file you want to write your animator to is writeable for php
  3 - Activate the Plugin
  4 - Configure the Plugin via the admin interface
  5 - Enjoy
