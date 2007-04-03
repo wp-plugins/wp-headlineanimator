@@ -1,0 +1,67 @@
+README
+======
+
+Contents:
+
+1 - Introduction
+2 - Requirements
+3 - Features
+4 - Installation
+5 - Todo
+6 - Bugs
+7 - Changes
+
+1 - Introduction:
+=================
+ WP-Headlineanimator is a Plugin for Wordpress. It generates an animated 
+ GIF File to be displayed in signatures or wherever you like to advertise
+ for your Blog.
+
+2 - Requirements:
+=================
+ 1 - Wordpress > 2.0
+ 2 - some time
+ 3 - Access to your webserver
+ 4 - A background picture for your signature
+
+3 - Features:
+=============
+ - As a forum signature can be called _very_often_, it is pointless generating
+   the picture from scratch via PHP
+ - The gif image is updated everytime you WRITE, DELETE or MODIFY a post.
+ - The Plugin is Polyglot-Compatible (this is a plugin for multilingual blogs)
+
+4 - Installation:
+=================
+ 1 - Upload the contents of the wp-headlineanimator directory into your
+     wordpress plugin directory.
+ 2 - make sure that wp-headlineanimator/tmp is writeable for wordpress
+     as some temp-data is stored there
+ 3 - Activate the Plugin
+ 4 - Configure the Plugin via the admin interface
+ 5 - Enjoy
+
+5 - Todo:
+=========
+  - getting rid of the tmp-images
+  - code cleanup
+  - internal upload for the background image
+  - a generic template for everyone as default
+
+6 - Bugs:
+=========
+
+
+
+7 - Changes:
+============
+
+0.4	- make use of polyglot_filter() for better Polyglot Support -> Multilanguage!!
+	- minior design fixes
+0.3	- Use 5 Headlines, generate animated GIF
+        - Make use of GifMerge.class.php
+0.2	- Added date() to image and made it optional (thx to pcDummy)
+	- Administrative interface
+	- Code cleanup
+0.1	- Added basic Support for Polyglot (hack)
+        - Initial release

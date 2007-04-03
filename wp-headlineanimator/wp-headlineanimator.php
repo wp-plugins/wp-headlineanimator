@@ -6,24 +6,8 @@ Description: Generates a graphic like the FB Headline Animator
 Version: 0.4
 Author: Christoph Bauer
 Author URI: http://my.stargazer.at/
-*/
 
-
-/*
-
-CHANGELOG:
-==========
-
-0.4	- make use of polyglot_filter() for better Polyglot Support -> Multilanguage!!
-	- minior design fixes
-0.3	- Use 5 Headlines, generate animated GIF
-        - Make use of GifMerge.class.php
-0.2	- Added date() to image and made it optional (thx to pcDummy)
-	- Administrative interface
-	- Code cleanup
-0.1	- Added Support for Polyglot
-        - Initial release
-
+For Changes see README
 */
 
 
