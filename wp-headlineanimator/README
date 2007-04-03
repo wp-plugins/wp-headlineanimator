@@ -44,18 +44,19 @@ Contents:
 
 5 - Todo:
 =========
-  - getting rid of the tmp-images
-  - code cleanup
   - internal upload for the background image
   - a generic template for everyone as default
 
 6 - Bugs:
 =========
-
+  - no default config
 
 
 7 - Changes:
 ============
+0.6	- Got rid of tmp path; we just write out our image
+	- cleanup
+	- picture format support
 0.5	- Upgrade to new GifMerge Class
 	- eliminating of direct DB Queries
 	- code cleanups

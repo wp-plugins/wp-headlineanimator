@@ -3,7 +3,7 @@
 Plugin Name: wp-headlineanimator
 Plugin URI: http://www.stargazer.at/
 Description: Generates a graphic like the FB Headline Animator
-Version: 0.5
+Version: 0.6
 Author: Christoph Bauer
 Author URI: http://my.stargazer.at/
 
@@ -14,25 +14,19 @@ For Info see README
 function wpc_write() {
 
   require_once('GifMerge.class.php');
-
-  $counter=0;
+  $frame=array();
+  $i=array();
   
   $myposts = get_posts('numberposts=5&order=DESC&orderby=post_date');
-	  
+  
+  $counter=0;  
   foreach($myposts as $post) :
   	$text 		= $post->post_title;
   	$textdate	= date('M jS',strtotime($post->post_date));
 
-	if ( function_exists('polyglot_filter') ) {
-      		$text = polyglot_filter($text);
-    	}
-
+	if ( function_exists('polyglot_filter') ) $text = polyglot_filter($text);
 	if ( get_option('wpc_wantdate') == 'on' && $text ) $text = $textdate  . ' - ' . $text;
-
-// shorten text if too long!
 	if (strlen($text) > 30) $text = substr($text, 0, 30).'...';
-
-// adjust spaces for some right alignment
 	if (strlen($text) < 20) {
 		$xmove       = 200 - (strlen($text) * 3.5);
 	} else {
@@ -45,31 +39,25 @@ function wpc_write() {
 	$picture     = readpic($picture_src);	
 	$color       = ImageColorAllocate( $picture, 100, 0, 0 );
 	
-// we need a tmp path for gif building for now - DROP THAT LATER!
-	$tmppath	 = ABSPATH . '/wp-content/plugins/wp-headlineanimator/tmp/';
-	
-	
 	
 // imagettftext ( image, size, angle,  x,  y, color , font , text )
 	if ($text) imagettftext(  $picture,   10,     0, $xmove, 58, $color, $font, $text);
 	imagettftext(  $picture,   14,     0, 100, 30, $color, $font, get_option('wpc_text') );
-	
-// writing the image to TMPPATH
-	imagegif ( $picture, $tmppath . 'tmp-' . $counter  . '.gif' );
+	$frame[$counter] = gif2string($picture);
 	imagedestroy( $picture );
 	$counter++;
   endforeach;
+  
+  $counter=0;
+  $frame=array_reverse($frame);
+  foreach($frame as $pic) :
+	$i[$counter] = array_pop($frame);
+	$counter++;
+	$i[$counter] = gif2string(readpic($picture_src));
+	$counter++; 
+  endforeach;
  
-  imagegif (readpic($picture_src), $tmppath . 'emptyframe.gif' );
- 
-// putting it together for passing to merger
-    $i = array( $tmppath . 'tmp-0.gif', $tmppath . 'emptyframe.gif', 
-		$tmppath . 'tmp-1.gif', $tmppath . 'emptyframe.gif', 
-		$tmppath . 'tmp-2.gif', $tmppath . 'emptyframe.gif', 
-		$tmppath . 'tmp-3.gif', $tmppath . 'emptyframe.gif', 
-		$tmppath . 'tmp-4.gif', $tmppath . 'emptyframe.gif' );
-
-	// Delay Handler
+    // Delay Handler
     $d    = array(300, 50, 300, 50, 300, 50, 300, 50, 300, 50);
    
 
@@ -93,7 +81,7 @@ function wpc_write() {
 				0,
 				0,
 				0,0,0,
-				'url'
+				'bin'
 			);
 
     $animgif = $anim->getAnimation();
@@ -120,6 +108,21 @@ function readpic($picture_src) {
 	}
 	return $picture;
 }
+
+
+function gif2string($image) {
+	$contents = ob_get_contents();
+	if ($contents !== false) ob_clean(); else ob_start();
+	imagegif($image);
+	$data = ob_get_contents();
+	if ($contents !== false) {
+		ob_clean();
+		echo $contents;
+	}
+	else ob_end_clean();
+	return $data;
+}
+
 
 function wpc_add_page() {
         add_submenu_page('options-general.php', 'WP-Headline Animator', 'WP-Headline Animator', 10, __FILE__, 'wpc_options_page');
