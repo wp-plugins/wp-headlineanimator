@@ -15,8 +15,6 @@ function wpc_write() {
 
   require_once('GifMerge.class.php');
 
-  global $wpdb;
-
   $myposts = get_posts('numberposts=5&order=ASC&orderby=post_date');
   foreach($myposts as $post) :
 
@@ -39,11 +37,11 @@ function wpc_write() {
 	$tmppath	 = ABSPATH . '/wp-content/plugins/wp-headlineanimator/tmp/';
 	
 	if (strlen($text) < 20) {
-	$xmove       = 200 - (strlen($text) * 2);
+		$xmove       = 200 - (strlen($text) * 2);
 	} elseif (strlen($text) < 20 && strlen($text) > 40 ) {
-	$xmove       = 200 - (strlen($text) * 3.5 );
+		$xmove       = 200 - (strlen($text) * 3.5 );
 	} else {
-	$xmove	   = 200 - (strlen($text) * 4 );
+		$xmove	   = 200 - (strlen($text) * 4 );
 	}
 	
 	// imagettftext ( image, size, angle,  x,  y, color , font , text )
