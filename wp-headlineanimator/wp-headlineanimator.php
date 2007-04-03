@@ -7,7 +7,7 @@ Version: 0.5
 Author: Christoph Bauer
 Author URI: http://my.stargazer.at/
 
-For Changes see README
+For Info see README
 */
 
 
@@ -22,7 +22,6 @@ function wpc_write() {
   foreach($myposts as $post) :
   	$text 		= $post->post_title;
   	$textdate	= date('M jS',strtotime($post->post_date));
-  	// $textdate 	= date('M jS', $post->post_date);
 
 	if ( function_exists('polyglot_filter') ) {
       		$text = polyglot_filter($text);
@@ -40,26 +39,29 @@ function wpc_write() {
 		$xmove       = 200 - (strlen($text) * 3.5 );
 	} 
 	
+// constructing the image	
 	$picture_src =  ABSPATH . '/' . get_option('wpc_image'); 
 	$font        = get_option('wpc_font');
 	$picture     = imagecreatefrompng( $picture_src );
 	$color       = ImageColorAllocate( $picture, 100, 0, 0 );
 	
-	// we need a tmp path for gif building
+// we need a tmp path for gif building for now - DROP THAT LATER!
 	$tmppath	 = ABSPATH . '/wp-content/plugins/wp-headlineanimator/tmp/';
 	
 	
 	
-	// imagettftext ( image, size, angle,  x,  y, color , font , text )
+// imagettftext ( image, size, angle,  x,  y, color , font , text )
 	if ($text) imagettftext(  $picture,   10,     0, $xmove, 58, $color, $font, $text);
 	imagettftext(  $picture,   14,     0, 100, 30, $color, $font, get_option('wpc_text') );
 	
+// writing the image to TMPPATH
 	imagegif ( $picture, $tmppath . 'tmp-' . $counter  . '.gif' );
 	imagedestroy( $picture );
 	$counter++;
   endforeach;
  
-  
+ 
+// putting it together for passing to merger
     $i = array( $tmppath . 'tmp-0.gif', $tmppath . 'tmp-5.gif', 
 		$tmppath . 'tmp-1.gif', $tmppath . 'tmp-5.gif', 
 		$tmppath . 'tmp-2.gif', $tmppath . 'tmp-5.gif', 
