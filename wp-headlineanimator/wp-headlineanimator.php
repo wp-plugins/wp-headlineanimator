@@ -15,11 +15,14 @@ function wpc_write() {
 
   require_once('GifMerge.class.php');
 
-  $myposts = get_posts('numberposts=5&order=ASC&orderby=post_date');
+  $counter=0;
+  
+  $myposts = get_posts('numberposts=5&order=DESC&orderby=post_date');
+	  
   foreach($myposts as $post) :
-
-	$text 		= the_title();
-	$textdate 	= the_date('M jS');
+  	$text 		= $post->post_title;
+  	$textdate	= date('M jS',strtotime($post->post_date));
+  	// $textdate 	= date('M jS', $post->post_date);
 
 	if ( function_exists('polyglot_filter') ) {
       		$text = polyglot_filter($text);
@@ -27,6 +30,15 @@ function wpc_write() {
 
 	if ( get_option('wpc_wantdate') == 'on' && $text ) $text = $textdate  . ' - ' . $text;
 
+// shorten text if too long!
+	if (strlen($text) > 30) $text = substr($text, 0, 20).'...';
+
+// adjust spaces for some right alignment
+	if (strlen($text) < 20) {
+		$xmove       = 200 - (strlen($text) * 2);
+	} else {
+		$xmove       = 200 - (strlen($text) * 3.5 );
+	} 
 	
 	$picture_src =  ABSPATH . '/' . get_option('wpc_image'); 
 	$font        = get_option('wpc_font');
@@ -36,13 +48,7 @@ function wpc_write() {
 	// we need a tmp path for gif building
 	$tmppath	 = ABSPATH . '/wp-content/plugins/wp-headlineanimator/tmp/';
 	
-	if (strlen($text) < 20) {
-		$xmove       = 200 - (strlen($text) * 2);
-	} elseif (strlen($text) < 20 && strlen($text) > 40 ) {
-		$xmove       = 200 - (strlen($text) * 3.5 );
-	} else {
-		$xmove	   = 200 - (strlen($text) * 4 );
-	}
+	
 	
 	// imagettftext ( image, size, angle,  x,  y, color , font , text )
 	if ($text) imagettftext(  $picture,   10,     0, $xmove, 58, $color, $font, $text);
@@ -50,9 +56,9 @@ function wpc_write() {
 	
 	imagegif ( $picture, $tmppath . 'tmp-' . $counter  . '.gif' );
 	imagedestroy( $picture );
-
+	$counter++;
   endforeach;
-
+ 
   
     $i = array( $tmppath . 'tmp-0.gif', $tmppath . 'tmp-5.gif', 
 		$tmppath . 'tmp-1.gif', $tmppath . 'tmp-5.gif', 
