@@ -16,55 +16,80 @@ function wpc_write() {
   require_once('GifMerge.class.php');
 
   global $wpdb;
-  $dbqry = $wpdb->get_results("SELECT post_date, post_title FROM $wpdb->posts WHERE post_status = 'publish' ORDER BY post_date DESC LIMIT 0 , 5");
 
+  $myposts = get_posts('numberposts=5&offset=1');
+  foreach($myposts as $post) :
 
-  for ( $counter = 0; $counter <= 5; $counter ++) {
-    $text = $dbqry[$counter]->post_title;
-    $textdate = date( 'M jS', strtotime($dbqry[$counter]->post_date) );
+	$text 		= the_title();
+	$textdate 	= the_date('M jS');
 
-    if ( function_exists('polyglot_filter') ) {
-      $text = polyglot_filter($text);
-    }
+	if ( function_exists('polyglot_filter') ) {
+      		$text = polyglot_filter($text);
+    	}
 
-    if ( get_option('wpc_wantdate') == 'on' && $text ) $text = $textdate  . ' - ' . $text;
+	if ( get_option('wpc_wantdate') == 'on' && $text ) $text = $textdate  . ' - ' . $text;
 
-    $picture_src =  ABSPATH . '/' . get_option('wpc_image'); 
-    $font        = get_option('wpc_font');
-    $picture     = imagecreatefrompng( $picture_src );
-    $color       = ImageColorAllocate( $picture, 100, 0, 0 );
+	
+	$picture_src =  ABSPATH . '/' . get_option('wpc_image'); 
+	$font        = get_option('wpc_font');
+	$picture     = imagecreatefrompng( $picture_src );
+	$color       = ImageColorAllocate( $picture, 100, 0, 0 );
+	
+	// we need a tmp path for gif building
+	$tmppath	 = ABSPATH . '/wp-content/plugins/wp-headlineanimator/tmp/';
+	
+	if (strlen($text) < 20) {
+	$xmove       = 200 - (strlen($text) * 2);
+	} elseif (strlen($text) < 20 && strlen($text) > 40 ) {
+	$xmove       = 200 - (strlen($text) * 3.5 );
+	} else {
+	$xmove	   = 200 - (strlen($text) * 4 );
+	}
+	
+	
+	
+	// imagettftext ( image, size, angle,  x,  y, color , font , text )
+	if ($text) imagettftext(  $picture,   10,     0, $xmove, 58, $color, $font, $text);
+	imagettftext(  $picture,   14,     0, 100, 30, $color, $font, get_option('wpc_text') );
+	
+	imagegif ( $picture, $tmppath . 'tmp-' . $counter  . '.gif' );
+	imagedestroy( $picture );
 
-    // we need a tmp path for gif building
-    $tmppath	 = ABSPATH . '/wp-content/plugins/wp-headlineanimator/tmp/';
+  endforeach;
 
-    if (strlen($text) < 20) {
-      $xmove       = 200 - (strlen($text) * 2);
-    } elseif (strlen($text) < 20 && strlen($text) > 40 ) {
-      $xmove       = 200 - (strlen($text) * 3.5 );
-    } else {
-      $xmove	   = 200 - (strlen($text) * 4 );
-    }
-
-
-
-    // imagettftext ( image, size, angle,  x,  y, color , font , text )
-    if ($text) imagettftext(  $picture,   10,     0, $xmove, 58, $color, $font, $text);
-    imagettftext(  $picture,   14,     0, 100, 30, $color, $font, get_option('wpc_text') );
-
-    imagegif ( $picture, $tmppath . 'tmp-' . $counter  . '.gif' );
-    imagedestroy( $picture );
-  }
-
+  
     $i = array( $tmppath . 'tmp-0.gif', $tmppath . 'tmp-5.gif', 
 		$tmppath . 'tmp-1.gif', $tmppath . 'tmp-5.gif', 
 		$tmppath . 'tmp-2.gif', $tmppath . 'tmp-5.gif', 
 		$tmppath . 'tmp-3.gif', $tmppath . 'tmp-5.gif', 
 		$tmppath . 'tmp-4.gif', $tmppath . 'tmp-5.gif' );
 
+	// Delay Handler
     $d    = array(300, 50, 300, 50, 300, 50, 300, 50, 300, 50);
-    $x    = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-    $y    = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-    $anim = new GifMerge($i, -1, -1, -1, 0, $d, $x, $y, 'C_FILE');
+   
+
+
+/* 
+        GIFEncoder constructor: 
+        ======================= 
+ 
+        image_stream = new GIFEncoder    ( 
+                            URL or Binary data    'Sources' 
+                            int                    'Delay times' 
+                            int                    'Animation loops' 
+                            int                    'Disposal' 
+                            int                    'Transparent red, green, blue colors' 
+                            int                    'Source type' 
+                        ); 
+*/ 
+
+    $anim = new GIFEncoder ( 	$i,
+				$d,
+				0,
+				0,
+				0,0,0,
+				'url'
+			);
 
     $animgif = $anim->getAnimation();
 
