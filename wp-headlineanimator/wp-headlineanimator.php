@@ -42,22 +42,7 @@ function wpc_write() {
 // constructing the image	
 	$picture_src =  ABSPATH . '/' . get_option('wpc_image'); 
 	$font        = get_option('wpc_font');
-	
-	switch (exif_imagetype($picture_src)) {
-		case 1:
-			$picture     = imagecreatefromgif( $picture_src );
-			break;
-		case 2:
-			$picture     = imagecreatefromjpeg( $picture_src );
-			break;
-		case 3:
-			$picture     = imagecreatefrompng( $picture_src );
-		break;
-		default:
-			wp_die('Unknown image format');
-			
-	}
-	
+	$picture     = readpic($picture_src);	
 	$color       = ImageColorAllocate( $picture, 100, 0, 0 );
 	
 // we need a tmp path for gif building for now - DROP THAT LATER!
@@ -75,13 +60,14 @@ function wpc_write() {
 	$counter++;
   endforeach;
  
+  imagegif (readpic($picture_src), $tmppath . 'emptyframe.gif' );
  
 // putting it together for passing to merger
-    $i = array( $tmppath . 'tmp-0.gif', $tmppath . 'tmp-5.gif', 
-		$tmppath . 'tmp-1.gif', $tmppath . 'tmp-5.gif', 
-		$tmppath . 'tmp-2.gif', $tmppath . 'tmp-5.gif', 
-		$tmppath . 'tmp-3.gif', $tmppath . 'tmp-5.gif', 
-		$tmppath . 'tmp-4.gif', $tmppath . 'tmp-5.gif' );
+    $i = array( $tmppath . 'tmp-0.gif', $tmppath . 'emptyframe.gif', 
+		$tmppath . 'tmp-1.gif', $tmppath . 'emptyframe.gif', 
+		$tmppath . 'tmp-2.gif', $tmppath . 'emptyframe.gif', 
+		$tmppath . 'tmp-3.gif', $tmppath . 'emptyframe.gif', 
+		$tmppath . 'tmp-4.gif', $tmppath . 'emptyframe.gif' );
 
 	// Delay Handler
     $d    = array(300, 50, 300, 50, 300, 50, 300, 50, 300, 50);
@@ -115,6 +101,24 @@ function wpc_write() {
     $f = fopen( ABSPATH . '/' . get_option('wpc_target').'.gif' , "w");
     fwrite($f, $animgif);
     fclose($f);
+}
+
+function readpic($picture_src) {
+	switch (exif_imagetype($picture_src)) {
+		case 1:
+			$picture     = imagecreatefromgif( $picture_src );
+			break;
+		case 2:
+			$picture     = imagecreatefromjpeg( $picture_src );
+			break;
+		case 3:
+			$picture     = imagecreatefrompng( $picture_src );
+			break;
+		default:
+			wp_die('Unknown image format');
+				
+	}
+	return $picture;
 }
 
 function wpc_add_page() {
