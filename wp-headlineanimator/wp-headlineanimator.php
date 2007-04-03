@@ -54,7 +54,7 @@ function wpc_write() {
 			$picture     = imagecreatefrompng( $picture_src );
 		break;
 		default:
-			die('unknown image format');
+			wp_die('Unknown image format');
 			
 	}
 	
