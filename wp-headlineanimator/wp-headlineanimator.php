@@ -42,7 +42,22 @@ function wpc_write() {
 // constructing the image	
 	$picture_src =  ABSPATH . '/' . get_option('wpc_image'); 
 	$font        = get_option('wpc_font');
-	$picture     = imagecreatefrompng( $picture_src );
+	
+	switch (exif_imagetype($picture_src)) {
+		case 1:
+			$picture     = imagecreatefromgif( $picture_src );
+			break;
+		case 2:
+			$picture     = imagecreatefromjpeg( $picture_src );
+			break;
+		case 3:
+			$picture     = imagecreatefrompng( $picture_src );
+		break;
+		default:
+			die('unknown image format');
+			
+	}
+	
 	$color       = ImageColorAllocate( $picture, 100, 0, 0 );
 	
 // we need a tmp path for gif building for now - DROP THAT LATER!
