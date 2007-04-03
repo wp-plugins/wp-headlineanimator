@@ -55,7 +55,9 @@ Contents:
 
 7 - Changes:
 ============
-
+0.5	- Upgrade to new GifMerge Class
+	- eliminating of direct DB Queries
+	- code cleanups
 0.4	- make use of polyglot_filter() for better Polyglot Support -> Multilanguage!!
 	- minior design fixes
 0.3	- Use 5 Headlines, generate animated GIF
