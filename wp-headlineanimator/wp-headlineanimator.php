@@ -30,11 +30,11 @@ function wpc_write() {
 	if ( get_option('wpc_wantdate') == 'on' && $text ) $text = $textdate  . ' - ' . $text;
 
 // shorten text if too long!
-	if (strlen($text) > 30) $text = substr($text, 0, 20).'...';
+	if (strlen($text) > 30) $text = substr($text, 0, 30).'...';
 
 // adjust spaces for some right alignment
 	if (strlen($text) < 20) {
-		$xmove       = 200 - (strlen($text) * 2);
+		$xmove       = 200 - (strlen($text) * 3.5);
 	} else {
 		$xmove       = 200 - (strlen($text) * 3.5 );
 	} 
