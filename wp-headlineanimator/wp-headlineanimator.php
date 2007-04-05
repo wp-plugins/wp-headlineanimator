@@ -50,6 +50,8 @@ function wpc_write() {
 	} else {
 		$textdate	= date( get_option('wpc_dateformat'),strtotime($post->post_date));
 	}
+	
+	if ( function_exists('polyglot_filter') ) $text = polyglot_filter($text); // just to be sure
 
 // do some option handling
 	if ( get_option('wpc_wantdate') == 'on' && $text ) $text = $textdate  . ' - ' . $text;
