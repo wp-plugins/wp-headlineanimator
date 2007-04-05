@@ -3,24 +3,46 @@
 Plugin Name: wp-headlineanimator
 Plugin URI: http://www.stargazer.at/
 Description: Generates a graphic like the FB Headline Animator. More info in my blog posts on my.stargazer.at...
-Version: 1.0
-Author: Christoph Bauer
+Version: 1.1
+Author: Christoph "Stargazer" Bauer
 Author URI: http://my.stargazer.at/
 
 For Info see README
 */
 
+/*  Copyright 2007  Christoph "Stargazer" Bauer  (email via http://my.stargazer.at/impressum-kontakt/ )
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
 
 function wpc_write() {
-
   require_once('GifMerge.class.php');
+
+  if ( !get_option('wpc_font') || !file_exists(get_option('wpc_font')) ) {
+	  return 0;
+  }
   
+  if ( !file_exists(get_option('wpc_image')) ) {
+	  return 0;
+  }
   $frame	= array();
   $i		= array();
   $d		= array();
   $myposts 	= get_posts('numberposts=5&order=DESC&orderby=post_date');
   $counter	= 0;
-    
+ 
   foreach($myposts as $post) :
   	$text 		= $post->post_title;
   	if ( !get_option('wpc_dateformat') ) {
@@ -147,6 +169,15 @@ function wpc_add_page() {
 }
 
 
+function wpc_install() {
+	if ( !get_option('wpc_image') ) {
+		update_option('wpc_image', 'wp-content/plugins/wp-headlineanimator/starblog.png');
+		update_option('wpc_target', 'animator');
+		// update_option('wpc_font', '/usr/share/fonts/corefonts/arial.ttf');
+		update_option('wpc_text', 'Now online:');
+		update_option('wpc_wantdate', 'off');
+	}
+}
 
 function wpc_options_page() {
 
@@ -177,7 +208,9 @@ function wpc_options_page() {
 
   <table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Settings" border="0">
     <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_structure">Background image:</label></th>
+		<th scope="row" width="33%"><label for="wpc_structure">
+		<?php if ( !file_exists(get_option('wpc_image')) ) echo '<font color="#ff0000">'; ?>Background image:<?php if ( !file_exists(get_option('wpc_image')) ) echo '</font>'; ?>
+		</label></th>
       <td width="300px">
         <input name="wpc_image" type="text" size="40" value="<?php echo $wpc_image ?>"/>
       </td>
@@ -185,7 +218,10 @@ function wpc_options_page() {
     </tr>
 
     <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Font file:</label></th>
+	<?php if ( !get_option('wpc_font') ) echo '<font color="#ff0000">'; ?>
+		<th scope="row" width="33%"><label for="wpc_labels">
+		<?php if ( !get_option('wpc_font') || !file_exists(get_option('wpc_font')) ) echo '<font color="#ff0000">'; ?>Font file:<?php if ( !get_option('wpc_font') || !file_exists(get_option('wpc_font')) ) echo '</font>'; ?>
+		</label></th>
       <td>
         <input name="wpc_font" type="text" size="40" value="<?php echo $wpc_font; ?>"/>
       </td>
@@ -230,7 +266,8 @@ function wpc_options_page() {
       <th>&nbsp;</th>
       <td colspan="2">&nbsp;</td>
     </tr>
-
+		      
+<? if ( file_exists( ABSPATH.'/'.$wpc_target.'.gif') ) { ?>
     <tr valign="top">
       <th>HTML Code for your Animator:</th>
       <td colspan="2"> &lt;a href="<?php echo get_settings('siteurl').'/'; ?>"&gt;&lt;img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"&gt;&lt;/a&gt;<td>
@@ -240,7 +277,7 @@ function wpc_options_page() {
       <th>&nbsp;</th>
       <td colspan="2"><a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"></a></td>
     </tr>
-
+<?php } ?>
   </table>
 
   <p class="submit"><input type="hidden" name="submitted" /><input type="submit" name="Submit" value="<?php _e($rev_action);?> Update Settings &raquo;" /></p>
@@ -252,7 +289,7 @@ function wpc_options_page() {
 }
 
   add_action('admin_menu'  , 'wpc_add_page');
-
+  add_action('activate_wp-headlineanimator/wp-headlineanimator.php', 'wpc_install');
   add_action('publish_post', 'wpc_write');
   add_action('edit_post'   , 'wpc_write');
   add_action('delete_post' , 'wpc_write');

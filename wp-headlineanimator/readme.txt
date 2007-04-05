@@ -45,9 +45,15 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 * a generic template for everyone as default
 
 == Bugs ==
-* no default config
+* no error handler on if output file is not writeable
 
 == Changes ==
+= Version 1.1 =
+- Ripped out Polyglot detection as this is already handled by wordpress with get_posts()
+- Added initialisation routine for default options
+- Preview only if file exists
+- Only write file if we got a font and picture
+
 = Version 1.0 =
 - Let's assume I got my wishlist completed on that topic and the code isn't too ugly.
 
