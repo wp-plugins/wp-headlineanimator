@@ -39,7 +39,7 @@ Contents:
  2 - make sure that the file you want to write your animator to is writeable for php
  3 - Activate the Plugin
  4 - Configure the Plugin via the admin interface
- 5 - Enjoy
+ 5 - Enjoy and be so kind giving some feedback to me on my blog
 
 5 - Todo:
 =========
@@ -53,6 +53,8 @@ Contents:
 
 7 - Changes:
 ============
+1.0	- Let's assume I got my wishlist completed on that topic and the code
+	  isn't too ugly.
 0.6	- Got rid of tmp path; we just write out our image
 	- cleanup
 	- picture format support

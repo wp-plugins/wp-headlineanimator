@@ -2,8 +2,8 @@
 /*
 Plugin Name: wp-headlineanimator
 Plugin URI: http://www.stargazer.at/
-Description: Generates a graphic like the FB Headline Animator
-Version: 0.6
+Description: Generates a graphic like the FB Headline Animator. More info in my blog posts on my.stargazer.at...
+Version: 1.0
 Author: Christoph Bauer
 Author URI: http://my.stargazer.at/
 
@@ -14,16 +14,18 @@ For Info see README
 function wpc_write() {
 
   require_once('GifMerge.class.php');
-  $frame=array();
-  $i=array();
   
-  $myposts = get_posts('numberposts=5&order=DESC&orderby=post_date');
-  
-  $counter=0;  
+  $frame	= array();
+  $i		= array();
+  $d		= array();
+  $myposts 	= get_posts('numberposts=5&order=DESC&orderby=post_date');
+  $counter	= 0;
+    
   foreach($myposts as $post) :
   	$text 		= $post->post_title;
   	$textdate	= date('M jS',strtotime($post->post_date));
 
+// do some option handling
 	if ( function_exists('polyglot_filter') ) $text = polyglot_filter($text);
 	if ( get_option('wpc_wantdate') == 'on' && $text ) $text = $textdate  . ' - ' . $text;
 	if (strlen($text) > 30) $text = substr($text, 0, 30).'...';
@@ -48,6 +50,7 @@ function wpc_write() {
 	$counter++;
   endforeach;
   
+// arrange frames
   $counter=0;
   $frame=array_reverse($frame);
   foreach($frame as $pic) :
@@ -55,11 +58,11 @@ function wpc_write() {
 	$counter++;
 	$i[$counter] = gif2string(readpic($picture_src));
 	$counter++; 
+	
+// compute the frame handling delays.
+	array_push ($d, 300, 50);
   endforeach;
- 
-    // Delay Handler
-    $d    = array(300, 50, 300, 50, 300, 50, 300, 50, 300, 50);
-   
+
 
 
 /* 
@@ -84,6 +87,7 @@ function wpc_write() {
 				'bin'
 			);
 
+// now slammin' the remix together for some 'bling bling'
     $animgif = $anim->getAnimation();
 
     $f = fopen( ABSPATH . '/' . get_option('wpc_target').'.gif' , "w");
@@ -92,6 +96,11 @@ function wpc_write() {
 }
 
 function readpic($picture_src) {
+	/**
+	*
+	* Picture loader. Life is like a box of chocolate - we don't know what we'll get.
+	*
+	**/
 	switch (exif_imagetype($picture_src)) {
 		case 1:
 			$picture     = imagecreatefromgif( $picture_src );
@@ -111,6 +120,12 @@ function readpic($picture_src) {
 
 
 function gif2string($image) {
+	/**
+	 * 
+	 * catch the output of imagegif as we need gif images to pass it to the MergerClass
+	 * 
+	 **/
+	
 	$contents = ob_get_contents();
 	if ($contents !== false) ob_clean(); else ob_start();
 	imagegif($image);
