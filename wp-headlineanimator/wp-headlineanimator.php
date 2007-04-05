@@ -209,7 +209,7 @@ function wpc_options_page() {
   <table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Settings" border="0">
     <tr valign="top">
 		<th scope="row" width="33%"><label for="wpc_structure">
-		<?php if ( !file_exists(get_option('wpc_image')) ) echo '<font color="#ff0000">'; ?>Background image:<?php if ( !file_exists(get_option('wpc_image')) ) echo '</font>'; ?>
+		<?php if ( !file_exists( ABSPATH.'/'.get_option('wpc_image')) ) echo '<font color="#ff0000">'; ?>Background image:<?php if ( !file_exists( ABSPATH.'/'.get_option('wpc_image') ) ) echo '</font>'; ?>
 		</label></th>
       <td width="300px">
         <input name="wpc_image" type="text" size="40" value="<?php echo $wpc_image ?>"/>
