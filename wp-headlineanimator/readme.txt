@@ -35,6 +35,7 @@ WP-Headlineanimator generates an animated GIF File to be displayed in signatures
 
 == Frequently Asked Questions ==
 Q: The plugin shows the StarBlog background
+
 A: Just draw your own background, upload and use the new filename in the config
 
 == Screenshots ==
@@ -48,20 +49,33 @@ none - if you want to see it in action, look at http://my.stargazer.at/starblog.
 * no default config
 
 == Changes ==
-1.0	- Let's assume I got my wishlist completed on that topic and the code
-	  isn't too ugly.
-0.6	- Got rid of tmp path; we just write out our image
-	- cleanup
-	- picture format support
-0.5	- Upgrade to new GifMerge Class
-	- eliminating of direct DB Queries
-	- code cleanups
-0.4	- make use of polyglot_filter() for better Polyglot Support -> Multilanguage!!
-	- minior design fixes
-0.3	- Use 5 Headlines, generate animated GIF
-        - Make use of GifMerge.class.php
-0.2	- Added date() to image and made it optional (thx to pcDummy)
-	- Administrative interface
-	- Code cleanup
-0.1	- Added basic Support for Polyglot (hack)
+Version 1.0:
+- Let's assume I got my wishlist completed on that topic and the code isn't too ugly.
+
+Version 0.6:
+- Got rid of tmp path; we just write out our image
+- cleanup
+- picture format support
+
+Version 0.5:
+- Upgrade to new GifMerge Class
+- eliminating of direct DB Queries
+- code cleanups
+
+Version 0.4:
+- make use of polyglot_filter() for better Polyglot Support -> Multilanguage!!
+- minior design fixes
+
+Version 0.3:
+- Use 5 Headlines, generate animated GIF
+- Make use of GifMerge.class.php
+
+Version 0.2:
+- Added date() to image and made it optional (thx to pcDummy)
+- Administrative interface
+- Code cleanup
+
+Version 0.1:
+- Added basic Support for Polyglot (hack)
+
         - Initial release
