@@ -23,10 +23,13 @@ function wpc_write() {
     
   foreach($myposts as $post) :
   	$text 		= $post->post_title;
-  	$textdate	= date('M jS',strtotime($post->post_date));
+  	if ( !get_option('wpc_dateformat') ) {
+  		$textdate	= date('M jS',strtotime($post->post_date));
+	} else {
+		$textdate	= date( get_option('wpc_dateformat'),strtotime($post->post_date));
+	}
 
 // do some option handling
-	if ( function_exists('polyglot_filter') ) $text = polyglot_filter($text);
 	if ( get_option('wpc_wantdate') == 'on' && $text ) $text = $textdate  . ' - ' . $text;
 	if (strlen($text) > 30) $text = substr($text, 0, 30).'...';
 	if (strlen($text) < 20) {
@@ -153,6 +156,7 @@ function wpc_options_page() {
     update_option('wpc_font', $_POST['wpc_font']);
     update_option('wpc_text', $_POST['wpc_text']);
     update_option('wpc_wantdate', $_POST['wpc_wantdate']);
+    update_option('wpc_dateformat', $_POST['wpc_dateformat']);
 
     wpc_write();
   }
@@ -162,6 +166,7 @@ function wpc_options_page() {
   $wpc_target = get_option('wpc_target');
   $wpc_text = get_option('wpc_text');
   $wpc_wantdate = get_option('wpc_wantdate');
+  $wpc_dateformat = get_option('wpc_dateformat');
 
 ?>
 <div class="wrap">
@@ -194,7 +199,7 @@ function wpc_options_page() {
       </td>
       <td>(relative to your WP install)</td>
     </tr>
-
+ 
     <tr valign="top">
       <th>&nbsp;</th>
       <td colspan="2">&nbsp;</td>
@@ -215,7 +220,12 @@ function wpc_options_page() {
 	<input name="wpc_wantdate" type="checkbox" value="on" <?php if($wpc_wantdate == 'on') { echo "checked=\"checked\""; } ?> />
       </td>
     </tr>
-
+    <tr valign="top">
+      <th scope="row" width="33%"><label for="wpc_labels">Date format:</label></th>
+      <td colspan="2">
+	<input name="wpc_dateformat" type="text" size="40" value="<?php echo $wpc_dateformat; ?>"/>
+      </td>
+    </tr>
     <tr valign="top">
       <th>&nbsp;</th>
       <td colspan="2">&nbsp;</td>
