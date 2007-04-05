@@ -34,7 +34,7 @@ function wpc_write() {
 	  return 0;
   }
   
-  if ( !file_exists(get_option('wpc_image')) ) {
+  if ( !file_exists( ABSPATH . '/' .get_option('wpc_image')) ) {
 	  return 0;
   }
   $frame	= array();
@@ -171,7 +171,7 @@ function wpc_add_page() {
 
 function wpc_install() {
 	if ( !get_option('wpc_image') ) {
-		update_option('wpc_image', 'wp-content/plugins/wp-headlineanimator/starblog.png');
+		update_option('wpc_image', 'wp-content/plugins/wp-headlineanimator/background.png');
 		update_option('wpc_target', 'animator');
 		// update_option('wpc_font', '/usr/share/fonts/corefonts/arial.ttf');
 		update_option('wpc_text', 'Now online:');
