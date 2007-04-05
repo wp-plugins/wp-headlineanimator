@@ -1,6 +1,6 @@
 === WP-HeadlineAnimator ===
 Contributors: Stargazer
-Donate link: http://my.stargazer.at/
+Donate link: http://my.stargazer.at/wishlist/
 Tags: post, image, signature
 Requires at least: 2.0
 Tested up to: SVN-bleeding
