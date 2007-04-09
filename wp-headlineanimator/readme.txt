@@ -7,7 +7,8 @@ Tested up to: 2.2-bleeding
 Stable tag: 1.1
 
 
-WP-Headlineanimator generates an animated GIF File to be displayed in signatures or wherever you like to advertise for your Blog.
+WP-Headlineanimator generates an animated GIF File to be displayed in signatures
+or wherever you like to advertise for your Blog.
 
 == Description ==
  WP-Headlineanimator is a Plugin for Wordpress. It generates an animated 
@@ -19,6 +20,7 @@ WP-Headlineanimator generates an animated GIF File to be displayed in signatures
 * some time
 * Access to your webserver
 * A background picture for your signature
+* A Font file (ttf)
 * PHP with exif support for image detection
 
 == Features ==
@@ -33,9 +35,37 @@ WP-Headlineanimator generates an animated GIF File to be displayed in signatures
 4. Configure the Plugin via the admin interface
 5.  Enjoy and be so kind giving some feedback to me on my blog
 
+== Configuration ==
+ The configuration takes place in the administrative backend on 
+ Options -> WP-HeadlineAnimator. The options are kept to a minimum to keep it
+ simple and intuitive.
+
+Background image: 	This text field requires the path to your HeadlineAnimator
+			Background picture relative to your WordPress installation.
+			If the picture is not accessible, the label is shown in red
+Font file:		This text field requires the *absolute* path to a font
+			file (ttf) on your server. It is used to write text on the
+			Background image. If the fomt file is not accessible, 
+			the label is shown in red
+Target:			This is the path where your image should be written to;
+			relative to your WordPress Installation
+Text on Picture:	Text entered here is shown on the Animator.
+Show date on animator:	If you want your headlines to be prefixed with a date,
+			check this box.
+Date format:		This is direct access to the PHP date() function used
+			to display the date prefix of your headlines.
+
+If you got things right, "HTML Code for your Animator" is shown including your
+animator.
+
 == Frequently Asked Questions ==
 = The plugin shows the StarBlog background =
 Just draw your own background image, upload and use the new filename in the config
+
+= The configuration labels of background picture and/or font file are written in red =
+If the labels are written in red, the plugin cannot access the files. Keep in mind:
+* the background picture path is relative to your wordpress directory
+* the font file uses an absolute path as most distributions are installing fonts to /usr/share/fonts/...
 
 == Screenshots ==
 None avaliable. If you want to see it in action, look at http://my.stargazer.at/starblog.gif
