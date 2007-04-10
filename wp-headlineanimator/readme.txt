@@ -16,12 +16,12 @@ or wherever you like to advertise for your Blog.
  for your Blog.
 
 == Requirements ==
-* Wordpress > 2.0
+* Wordpress >= 2.1
 * some time
 * Access to your webserver
 * A background picture for your signature
 * A Font file (ttf)
-* PHP with exif support for image detection
+* PHP 5 with exif support for image detection
 
 == Features ==
 * As a forum signature can be called _very_often_, it is pointless generating the picture from scratch via PHP
