@@ -21,7 +21,7 @@ or wherever you like to advertise for your Blog.
 * Access to your webserver
 * A background picture for your signature
 * A Font file (ttf)
-* PHP 5 with exif support for image detection
+* PHP with exif support for image detection
 
 == Features ==
 * As a forum signature can be called _very_often_, it is pointless generating the picture from scratch via PHP
