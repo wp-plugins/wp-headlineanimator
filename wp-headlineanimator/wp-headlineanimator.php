@@ -65,8 +65,9 @@ function wpc_write() {
 // constructing the image	
 	$picture_src =  ABSPATH . '/' . get_option('wpc_image'); 
 	$font        = get_option('wpc_font');
-	$picture     = readpic($picture_src);	
-	$color       = ImageColorAllocate( $picture, 100, 0, 0 );
+	$picture     = readpic($picture_src);
+	$colarray	 = html2rgb(get_option('wpc_textcol'));
+	$color       = ImageColorAllocate( $picture, $colarray[0], $colarray[1], $colarray[2] );
 	
 	
 // imagettftext ( image, size, angle,  x,  y, color , font , text )
@@ -169,6 +170,24 @@ function gif2string($image) {
 	return $data;
 }
 
+function html2rgb($color)
+{
+	if ($color[0] == '#')
+		$color = substr($color, 1);
+
+	if (strlen($color) == 6)
+		list($r, $g, $b) = array($color[0].$color[1],
+			 $color[2].$color[3],
+	$color[4].$color[5]);
+	elseif (strlen($color) == 3)
+		list($r, $g, $b) = array($color[0], $color[1], $color[2]);
+	else
+		return false;
+
+	$r = hexdec($r); $g = hexdec($g); $b = hexdec($b);
+
+	return array($r, $g, $b);
+}
 
 function wpc_add_page() {
         add_submenu_page('options-general.php', 'WP-Headline Animator', 'WP-Headline Animator', 10, __FILE__, 'wpc_options_page');
@@ -179,7 +198,7 @@ function wpc_install() {
 	if ( !get_option('wpc_image') ) {
 		update_option('wpc_image', 'wp-content/plugins/wp-headlineanimator/background.png');
 		update_option('wpc_target', 'animator');
-		// update_option('wpc_font', '/usr/share/fonts/corefonts/arial.ttf');
+		update_option('wpc_textcol', '#740204');
 		update_option('wpc_text', 'Now online:');
 		update_option('wpc_wantdate', 'off');
 	}
@@ -192,6 +211,7 @@ function wpc_options_page() {
     update_option('wpc_target', $_POST['wpc_target']);
     update_option('wpc_font', $_POST['wpc_font']);
     update_option('wpc_text', $_POST['wpc_text']);
+	update_option('wpc_textcol', $_POST['wpc_textcol']);
     update_option('wpc_wantdate', $_POST['wpc_wantdate']);
     update_option('wpc_dateformat', $_POST['wpc_dateformat']);
 
@@ -202,6 +222,7 @@ function wpc_options_page() {
   $wpc_font = get_option('wpc_font');
   $wpc_target = get_option('wpc_target');
   $wpc_text = get_option('wpc_text');
+  $wpc_textcol = get_option('wpc_textcol');
   $wpc_wantdate = get_option('wpc_wantdate');
   $wpc_dateformat = get_option('wpc_dateformat');
 
@@ -255,6 +276,23 @@ function wpc_options_page() {
       <td>&nbsp;</td>
     </tr>
 
+    <tr valign="top">
+      <th scope="row" width="33%"><label for="wpc_labels">Text color:</label></th>
+      <td>
+        <input name="wpc_textcol" type="text" size="40" value="<?php echo $wpc_textcol; ?>"/>
+      </td>
+      <td>(HTML Notation like #740204)</td>
+    </tr>
+			  
+			  <!--
+			  <?=get_option('wpc_textcol'); ?> =>
+			  <? print_r (html2rgb(get_option('wpc_textcol'))); ?>
+			  -->
+			  
+	<tr valign="top">
+		<th>&nbsp;</th>
+		<td colspan="2">&nbsp;</td>
+	</tr>
 
     <tr valign="top">
       <th scope="row" width="33%"><label for="wpc_labels">Show date on animator:</label></th>

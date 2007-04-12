@@ -84,6 +84,7 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 - Reintroduced Polyglot support as it just did some weird 
 - got rid of exif - caused many problems on some systems.
 - added BBCode Line for copy&paste
+- Textcolor is now changeable
 
 
 = Version 1.1 =
