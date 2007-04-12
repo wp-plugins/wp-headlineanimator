@@ -278,7 +278,10 @@ function wpc_options_page() {
       <th>HTML Code for your Animator:</th>
       <td colspan="2"> &lt;a href="<?php echo get_settings('siteurl').'/'; ?>"&gt;&lt;img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"&gt;&lt;/a&gt;<td>
     </tr>
-
+	<tr valign="top">
+			<th>BBCode for your Animator:</th>
+			<td colspan="2"> [url=<?php echo get_settings('siteurl').'/'; ?>][img]<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif[/img][/url]<td>
+	</tr>
     <tr valign="top">
       <th>&nbsp;</th>
       <td colspan="2"><a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"></a></td>

@@ -83,6 +83,8 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 = Version 1.2 =
 - Reintroduced Polyglot support as it just did some weird 
 - got rid of exif - caused many problems on some systems.
+- added BBCode Line for copy&paste
+
 
 = Version 1.1 =
 - Ripped out Polyglot detection as this is already handled by wordpress with get_posts()
