@@ -226,15 +226,12 @@ function wpc_options_page() {
   $wpc_wantdate = get_option('wpc_wantdate');
   $wpc_dateformat = get_option('wpc_dateformat');
 
-?> 
-
 		
-<?php
 if ( !function_exists('imagegif') ) {
-	echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">You have no GIF Support in your GDLib. This Plugin will not work</font></h3></div>';
+		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">You have no GIF Support in your GDLib. This Plugin will not work</font></h3></div>';
 }
 
-// imagettftext
+
 ?>
 
 		
