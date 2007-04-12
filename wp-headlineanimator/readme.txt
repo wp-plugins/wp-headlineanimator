@@ -73,14 +73,16 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 == Todo ==
 * internal upload for the background image
 * make font colour customizeable
-* get rid of exif
+
 
 == Bugs ==
 * no error handler on if output file is not writeable
 
+
 == Changes ==
 = Version 1.2 =
 - Reintroduced Polyglot support as it just did some weird 
+- got rid of exif - caused many problems on some systems.
 
 = Version 1.1 =
 - Ripped out Polyglot detection as this is already handled by wordpress with get_posts()
