@@ -261,7 +261,15 @@ if ( !function_exists('imagegif') ) {
       </td>
       <td>(TTF File on the server)</td>
     </tr>
-
+	<tr valign="top">
+		<th>&nbsp;</th>
+			  <td colspan="2">If your TTF file is in the same directory as this plugin, I am expecting "<?= ABSPATH  ?>wp-content/plugins/wp-headlineanimator/myfont.ttf" here.</td>
+	</tr>
+	<tr valign="top">
+		<th>&nbsp;</th>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+			  
     <tr valign="top">
       <th scope="row" width="33%"><label for="wpc_labels">Target:</label></th>
       <td>
