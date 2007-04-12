@@ -126,16 +126,20 @@ function readpic($picture_src) {
 	/**
 	*
 	* Picture loader. Life is like a box of chocolate - we don't know what we'll get.
+	* So let's pretend the user knows what he's doing, using valid extensions...
 	*
 	**/
-	switch (exif_imagetype($picture_src)) {
-		case 1:
+	$extension = strtolower(strrchr($picture_src, '.'));
+	
+	switch ($extension) {
+		case '.gif':
 			$picture     = imagecreatefromgif( $picture_src );
 			break;
-		case 2:
+		case '.jpg':
+		case '.jpeg':
 			$picture     = imagecreatefromjpeg( $picture_src );
 			break;
-		case 3:
+		case '.png':
 			$picture     = imagecreatefrompng( $picture_src );
 			break;
 		default:

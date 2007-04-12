@@ -21,7 +21,7 @@ or wherever you like to advertise for your Blog.
 * Access to your webserver
 * A background picture for your signature
 * A Font file (ttf)
-* PHP with exif support for image detection
+* PHP with GDlib support
 
 == Features ==
 * As a forum signature can be called _very_often_, it is pointless generating the picture from scratch via PHP
@@ -33,7 +33,7 @@ or wherever you like to advertise for your Blog.
 2. make sure that the file you want to write your animator to is writeable for php
 3. Activate the Plugin
 4. Configure the Plugin via the admin interface
-5.  Enjoy and be so kind giving some feedback to me on my blog
+5. Enjoy and be so kind giving some feedback to me on my blog
 
 == Configuration ==
  The configuration takes place in the administrative backend on 
@@ -72,12 +72,16 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 
 == Todo ==
 * internal upload for the background image
-* a generic template for everyone as default
+* make font colour customizeable
+* get rid of exif
 
 == Bugs ==
 * no error handler on if output file is not writeable
 
 == Changes ==
+= Version 1.2 =
+- Reintroduced Polyglot support as it just did some weird 
+
 = Version 1.1 =
 - Ripped out Polyglot detection as this is already handled by wordpress with get_posts()
 - Added initialisation routine for default options
