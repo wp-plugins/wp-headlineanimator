@@ -3,8 +3,8 @@ Contributors: Stargazer
 Donate link: http://my.stargazer.at/wishlist/
 Tags: post, image, signature
 Requires at least: 2.0
-Tested up to: 2.2-bleeding
-Stable tag: 1.1
+Tested up to: 2.2-almost-beta
+Stable tag: 1.2
 
 
 WP-Headlineanimator generates an animated GIF File to be displayed in signatures
