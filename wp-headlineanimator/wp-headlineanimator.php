@@ -156,7 +156,7 @@ function gif2string($image) {
 	 * catch the output of imagegif as we need gif images to pass it to the MergerClass
 	 * 
 	 **/
-	
+	ob_start();
 	$contents = ob_get_contents();
 	if ($contents !== false) ob_clean(); else ob_start();
 	imagegif($image);
