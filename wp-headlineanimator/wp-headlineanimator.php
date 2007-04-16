@@ -71,7 +71,7 @@ function wpc_write() {
 	
 	
 // imagettftext ( image, size, angle,  x,  y, color , font , text )
-	if ($text) imagettftext(  $picture,   10,     0, $xmove, 58, $color, $font, $text);
+	if ($text) imagettftext(  $picture,   get_option('wpc_newssize'),     0, $xmove, 58, $color, $font, $text);
 	imagettftext(  $picture,   get_option('wpc_textsize'),     0, 100, 30, $color, $font, get_option('wpc_text') );
 	$frame[$counter] = gif2string($picture);
 	imagedestroy( $picture );
@@ -200,7 +200,7 @@ function wpc_install() {
 		update_option('wpc_target', 'animator');
 		update_option('wpc_textcol', '#740204');
 		update_option('wpc_textsize', '16');
-		update_option('wpc_newssize', '12');
+		update_option('wpc_newssize', '10');
 		update_option('wpc_text', 'Now online:');
 		update_option('wpc_wantdate', 'off');
 	}
@@ -214,8 +214,8 @@ function wpc_options_page() {
     update_option('wpc_font', $_POST['wpc_font']);
     update_option('wpc_text', $_POST['wpc_text']);
     update_option('wpc_textcol', $_POST['wpc_textcol']);
-    update_option('wpc_textsize', $_POST['wpc_textsize']);
-    update_option('wpc_newssize', $_POST['wpc_newssize']);
+    update_option('wpc_textsize', intval($_POST['wpc_textsize']));
+    update_option('wpc_newssize', intval($_POST['wpc_newssize']));
     update_option('wpc_wantdate', $_POST['wpc_wantdate']);
     update_option('wpc_dateformat', $_POST['wpc_dateformat']);
 
@@ -309,6 +309,14 @@ if ( !function_exists('imagegif') ) {
       <th scope="row" width="33%"><label for="wpc_labels">Text size:</label></th>
       <td>
         <input name="wpc_textsize" type="text" size="40" value="<?php echo $wpc_textsize; ?>"/>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr valign="top">
+      <th scope="row" width="33%"><label for="wpc_labels">Newstext size:</label></th>
+      <td>
+        <input name="wpc_newssize" type="text" size="40" value="<?php echo $wpc_newssize; ?>"/>
       </td>
       <td>&nbsp;</td>
     </tr>
