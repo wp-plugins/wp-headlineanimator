@@ -72,7 +72,7 @@ function wpc_write() {
 	
 // imagettftext ( image, size, angle,  x,  y, color , font , text )
 	if ($text) imagettftext(  $picture,   10,     0, $xmove, 58, $color, $font, $text);
-	imagettftext(  $picture,   14,     0, 100, 30, $color, $font, get_option('wpc_text') );
+	imagettftext(  $picture,   get_option('wpc_textsize'),     0, 100, 30, $color, $font, get_option('wpc_text') );
 	$frame[$counter] = gif2string($picture);
 	imagedestroy( $picture );
 	$counter++;
@@ -199,6 +199,8 @@ function wpc_install() {
 		update_option('wpc_image', 'wp-content/plugins/wp-headlineanimator/background.png');
 		update_option('wpc_target', 'animator');
 		update_option('wpc_textcol', '#740204');
+		update_option('wpc_textsize', '16');
+		update_option('wpc_newssize', '12');
 		update_option('wpc_text', 'Now online:');
 		update_option('wpc_wantdate', 'off');
 	}
@@ -211,7 +213,9 @@ function wpc_options_page() {
     update_option('wpc_target', $_POST['wpc_target']);
     update_option('wpc_font', $_POST['wpc_font']);
     update_option('wpc_text', $_POST['wpc_text']);
-	update_option('wpc_textcol', $_POST['wpc_textcol']);
+    update_option('wpc_textcol', $_POST['wpc_textcol']);
+    update_option('wpc_textsize', $_POST['wpc_textsize']);
+    update_option('wpc_newssize', $_POST['wpc_newssize']);
     update_option('wpc_wantdate', $_POST['wpc_wantdate']);
     update_option('wpc_dateformat', $_POST['wpc_dateformat']);
 
@@ -223,6 +227,8 @@ function wpc_options_page() {
   $wpc_target = get_option('wpc_target');
   $wpc_text = get_option('wpc_text');
   $wpc_textcol = get_option('wpc_textcol');
+  $wpc_textsize = get_option('wpc_textsize');
+  $wpc_newssize = get_option('wpc_newssize');
   $wpc_wantdate = get_option('wpc_wantdate');
   $wpc_dateformat = get_option('wpc_dateformat');
 
@@ -297,6 +303,14 @@ if ( !function_exists('imagegif') ) {
         <input name="wpc_textcol" type="text" size="40" value="<?php echo $wpc_textcol; ?>"/>
       </td>
       <td>(HTML Notation like #740204)</td>
+    </tr>
+
+    <tr valign="top">
+      <th scope="row" width="33%"><label for="wpc_labels">Text size:</label></th>
+      <td>
+        <input name="wpc_textsize" type="text" size="40" value="<?php echo $wpc_textsize; ?>"/>
+      </td>
+      <td>&nbsp;</td>
     </tr>
 			    
 	<tr valign="top">
