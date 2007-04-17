@@ -88,7 +88,7 @@ function wpc_write() {
 	$counter++; 
 	
 // compute the frame handling delays.
-	array_push ($d, 300, 50);
+		array_push ($d, get_option('wpc_pictime'), get_option('wpc_nopictime'));
   endforeach;
 
 
@@ -205,6 +205,8 @@ function wpc_install() {
 		update_option('wpc_wantdate', 'off');
 		update_option('wpc_mode', 'off');
 		update_option('wpc_artnum', '5');
+		update_option('wpc_pictime', 300);
+		update_option('wpc_nopictime', 50);
 	}
 }
 
@@ -232,6 +234,17 @@ function wpc_options_page() {
 	  } else {
 		  update_option('wpc_artnum', 5);
 	  }
+	  if ($_POST['wpc_pictime'] && intval($_POST['wpc_pictime']) >= 0 ) {
+		  update_option('wpc_pictime', intval($_POST['wpc_pictime']));
+	  } else {
+		  update_option('wpc_pictime', 300);
+	  }
+	  if ($_POST['wpc_nopictime'] && intval($_POST['wpc_nopictime']) >= 0 ) {
+		  update_option('wpc_nopictime', intval($_POST['wpc_nopictime']));
+	  } else {
+		  update_option('wpc_nopictime', 50);
+	  }
+	  
 	  if ($_POST['wpc_wantdate']) update_option('wpc_wantdate', $_POST['wpc_wantdate']);
 	  if ($_POST['wpc_dateformat']) update_option('wpc_dateformat', $_POST['wpc_dateformat']);
 	  

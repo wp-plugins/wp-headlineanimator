@@ -1,16 +1,17 @@
 <?php
-  $wpc_image = get_option('wpc_image');
-  $wpc_font = get_option('wpc_font');
-  $wpc_target = get_option('wpc_target');
-  $wpc_text = get_option('wpc_text');
-  $wpc_textcol = get_option('wpc_textcol');
+  $wpc_image 	= get_option('wpc_image');
+  $wpc_font 	= get_option('wpc_font');
+  $wpc_target 	= get_option('wpc_target');
+  $wpc_text 	= get_option('wpc_text');
+  $wpc_textcol 	= get_option('wpc_textcol');
   $wpc_textsize = get_option('wpc_textsize');
   $wpc_newssize = get_option('wpc_newssize');
   $wpc_wantdate = get_option('wpc_wantdate');
   $wpc_dateformat = get_option('wpc_dateformat');
-  $wpc_mode = get_option('wpc_mode');
-  $wpc_artnum = get_option('wpc_artnum');
-
+  $wpc_mode 	= get_option('wpc_mode');
+  $wpc_artnum 	= get_option('wpc_artnum');
+  $wpc_pictime	= get_option('wpc_pictime');
+  $wpc_nopictime= get_option('wpc_nopictime');
 		
 if ( !function_exists('imagegif') ) {
 		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">You have no GIF Support in your GDLib. This Plugin will not work</font></h3></div>';
@@ -121,6 +122,14 @@ if ( !function_exists('imagegif') ) {
 	<tr valign="top">
 	  <th scope="row" width="33%"><label for="wpc_artnum">Headlines to display:</label></th>
 	  <td colspan="2"><input name="wpc_artnum" type="text" size="40" value="<?php echo $wpc_artnum; ?>"/></td>
+	</tr>
+	<tr valign="top">
+	  <th scope="row" width="33%"><label for="wpc_pictime">Headline display time (milliseconds) :</label></th>
+	  <td colspan="2"><input name="wpc_pictime" type="text" size="40" value="<?php echo $wpc_pictime; ?>"/></td>
+	</tr>
+	<tr valign="top">
+	  <th scope="row" width="33%"><label for="wpc_nopictime">Delay between headlines (milliseconds)</label></th>
+	  <td colspan="2"><input name="wpc_nopictime" type="text" size="40" value="<?php echo $wpc_nopictime; ?>"/></td>
 	</tr>
 					  
 <?php } ?>
