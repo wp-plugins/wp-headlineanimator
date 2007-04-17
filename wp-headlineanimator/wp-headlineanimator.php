@@ -40,7 +40,7 @@ function wpc_write() {
   $frame	= array();
   $i		= array();
   $d		= array();
-  $myposts 	= get_posts('numberposts=5&order=DESC&orderby=post_date');
+  $myposts 	= get_posts('numberposts='.get_option('wpc_artnum').'&order=DESC&orderby=post_date');
   $counter	= 0;
  
   foreach($myposts as $post) :
@@ -204,6 +204,7 @@ function wpc_install() {
 		update_option('wpc_text', 'Now online:');
 		update_option('wpc_wantdate', 'off');
 		update_option('wpc_mode', 'off');
+		update_option('wpc_artnum', '5');
 	}
 }
 
@@ -226,11 +227,16 @@ function wpc_options_page() {
 	  } else {
 		  update_option('wpc_newssize', 10);
 	  }
-	  
+	  if ($_POST['wpc_artnum'] && intval($_POST['wpc_artnum']) > 0 ) {
+		  update_option('wpc_artnum', intval($_POST['wpc_artnum']));
+	  } else {
+		  update_option('wpc_artnum', 5);
+	  }
 	  if ($_POST['wpc_wantdate']) update_option('wpc_wantdate', $_POST['wpc_wantdate']);
 	  if ($_POST['wpc_dateformat']) update_option('wpc_dateformat', $_POST['wpc_dateformat']);
+	  
+	  
 	  update_option('wpc_mode', $_POST['wpc_mode']);
-	
     wpc_write();
   }
 

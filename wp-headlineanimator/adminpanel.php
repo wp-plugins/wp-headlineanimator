@@ -9,6 +9,7 @@
   $wpc_wantdate = get_option('wpc_wantdate');
   $wpc_dateformat = get_option('wpc_dateformat');
   $wpc_mode = get_option('wpc_mode');
+  $wpc_artnum = get_option('wpc_artnum');
 
 		
 if ( !function_exists('imagegif') ) {
@@ -117,6 +118,11 @@ if ( !function_exists('imagegif') ) {
       <th>&nbsp;</th>
       <td colspan="2">&nbsp;</td>
     </tr>
+	<tr valign="top">
+	  <th scope="row" width="33%"><label for="wpc_artnum">Headlines to display:</label></th>
+	  <td colspan="2"><input name="wpc_artnum" type="text" size="40" value="<?php echo $wpc_artnum; ?>"/></td>
+	</tr>
+					  
 <?php } ?>
 	</table>
 </div>

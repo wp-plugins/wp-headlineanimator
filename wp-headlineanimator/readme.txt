@@ -43,17 +43,23 @@ or wherever you like to advertise for your Blog.
 Background image: 	This text field requires the path to your HeadlineAnimator
 			Background picture relative to your WordPress installation.
 			If the picture is not accessible, the label is shown in red
+
 Font file:		This text field requires the *absolute* path to a font
 			file (ttf) on your server. It is used to write text on the
 			Background image. If the fomt file is not accessible, 
 			the label is shown in red
+
 Target:			This is the path where your image should be written to;
 			relative to your WordPress Installation
+
 Text on Picture:	Text entered here is shown on the Animator.
+
 Text Color: 		Enter a color here in Hex format (#ffffff is white). This
 			color will be used for the text on the picture.
+
 Show date on animator:	If you want your headlines to be prefixed with a date,
 			check this box.
+
 Date format:		This is direct access to the PHP date() function used
 			to display the date prefix of your headlines.
 
@@ -87,6 +93,7 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 - Split off administration to seperate file
 - Introduced simple and advanced configuration
 - Got rid of the last hardcoded path information
+- Number of headlines to be displayed is now customizeable
 
 = Version 1.2 =
 - Reintroduced Polyglot support as it just did some weird 
