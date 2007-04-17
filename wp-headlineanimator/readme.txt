@@ -38,20 +38,20 @@ or wherever you like to advertise for your Blog.
 == Configuration ==
  The configuration takes place in the administrative backend on 
  Options -> WP-HeadlineAnimator. The options are kept to a minimum to keep it
- simple and intuitive.
+ simple and intuitive. Basic options here:
 
 Background image: 	This text field requires the path to your HeadlineAnimator
-					Background picture relative to your WordPress installation.
-					If the picture is not accessible, the label is shown in red
-Font file:			This text field requires the *absolute* path to a font
-					file (ttf) on your server. It is used to write text on the
-					Background image. If the fomt file is not accessible, 
-					the label is shown in red
-Target:				This is the path where your image should be written to;
-					relative to your WordPress Installation
+			Background picture relative to your WordPress installation.
+			If the picture is not accessible, the label is shown in red
+Font file:		This text field requires the *absolute* path to a font
+			file (ttf) on your server. It is used to write text on the
+			Background image. If the fomt file is not accessible, 
+			the label is shown in red
+Target:			This is the path where your image should be written to;
+			relative to your WordPress Installation
 Text on Picture:	Text entered here is shown on the Animator.
 Text Color: 		Enter a color here in Hex format (#ffffff is white). This
-					color will be used for the text on the picture.
+			color will be used for the text on the picture.
 Show date on animator:	If you want your headlines to be prefixed with a date,
 			check this box.
 Date format:		This is direct access to the PHP date() function used
@@ -81,12 +81,18 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 
 
 == Changes ==
+
+= Version 1.3 =
+- Font size now customizeable
+- Split off administration to seperate file
+- Introduced simple and advanced configuration
+- Got rid of the last hardcoded path information
+
 = Version 1.2 =
 - Reintroduced Polyglot support as it just did some weird 
 - got rid of exif - caused many problems on some systems.
 - added BBCode Line for copy&paste
 - Textcolor is now changeable
-
 
 = Version 1.1 =
 - Ripped out Polyglot detection as this is already handled by wordpress with get_posts()
