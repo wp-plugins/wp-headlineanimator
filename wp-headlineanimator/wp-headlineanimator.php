@@ -203,39 +203,26 @@ function wpc_install() {
 		update_option('wpc_newssize', '10');
 		update_option('wpc_text', 'Now online:');
 		update_option('wpc_wantdate', 'off');
+		update_option('wpc_mode', 'off');
 	}
 }
 
 function wpc_options_page() {
 
   if(isset($_POST['submitted'])){
-    update_option('wpc_image', $_POST['wpc_image']);
-    update_option('wpc_target', $_POST['wpc_target']);
-    update_option('wpc_font', $_POST['wpc_font']);
-    update_option('wpc_text', $_POST['wpc_text']);
-    update_option('wpc_textcol', $_POST['wpc_textcol']);
-    update_option('wpc_textsize', intval($_POST['wpc_textsize']));
-    update_option('wpc_newssize', intval($_POST['wpc_newssize']));
-    update_option('wpc_wantdate', $_POST['wpc_wantdate']);
-    update_option('wpc_dateformat', $_POST['wpc_dateformat']);
-
+	  if ($_POST['wpc_image']) update_option('wpc_image', $_POST['wpc_image']);
+	  if ($_POST['wpc_target']) update_option('wpc_target', $_POST['wpc_target']);
+	  if ($_POST['wpc_font']) update_option('wpc_font', $_POST['wpc_font']);
+	  if ($_POST['wpc_text']) update_option('wpc_text', $_POST['wpc_text']);
+	  if ($_POST['wpc_textcol']) update_option('wpc_textcol', $_POST['wpc_textcol']);
+	  if ($_POST['wpc_textsize']) update_option('wpc_textsize', intval($_POST['wpc_textsize']));
+	  if ($_POST['wpc_newssize']) update_option('wpc_newssize', intval($_POST['wpc_newssize']));
+	  if ($_POST['wpc_wantdate']) update_option('wpc_wantdate', $_POST['wpc_wantdate']);
+	  if ($_POST['wpc_dateformat']) update_option('wpc_dateformat', $_POST['wpc_dateformat']);
+	  update_option('wpc_mode', $_POST['wpc_mode']);
+	
     wpc_write();
   }
-
-  $wpc_image = get_option('wpc_image');
-  $wpc_font = get_option('wpc_font');
-  $wpc_target = get_option('wpc_target');
-  $wpc_text = get_option('wpc_text');
-  $wpc_textcol = get_option('wpc_textcol');
-  $wpc_textsize = get_option('wpc_textsize');
-  $wpc_newssize = get_option('wpc_newssize');
-  $wpc_wantdate = get_option('wpc_wantdate');
-  $wpc_dateformat = get_option('wpc_dateformat');
-
-		
-if ( !function_exists('imagegif') ) {
-		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">You have no GIF Support in your GDLib. This Plugin will not work</font></h3></div>';
-}
 
 include('adminpanel.php');
 

@@ -1,3 +1,21 @@
+<?php
+  $wpc_image = get_option('wpc_image');
+  $wpc_font = get_option('wpc_font');
+  $wpc_target = get_option('wpc_target');
+  $wpc_text = get_option('wpc_text');
+  $wpc_textcol = get_option('wpc_textcol');
+  $wpc_textsize = get_option('wpc_textsize');
+  $wpc_newssize = get_option('wpc_newssize');
+  $wpc_wantdate = get_option('wpc_wantdate');
+  $wpc_dateformat = get_option('wpc_dateformat');
+  $wpc_mode = get_option('wpc_mode');
+
+		
+if ( !function_exists('imagegif') ) {
+		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">You have no GIF Support in your GDLib. This Plugin will not work</font></h3></div>';
+}
+?>
+
 <div class="wrap">
   <h2> WP-Headline Animator</h2>
 
@@ -62,6 +80,7 @@
       <td>(HTML Notation like #740204)</td>
     </tr>
 
+<?php if ($wpc_mode == 'on') { ?>
     <tr valign="top">
       <th scope="row" width="33%"><label for="wpc_labels">Text size:</label></th>
       <td>
@@ -99,7 +118,7 @@
       <th>&nbsp;</th>
       <td colspan="2">&nbsp;</td>
     </tr>
-		      
+<?php } ?>
 <? if ( file_exists( ABSPATH.'/'.$wpc_target.'.gif') ) { ?>
     <tr valign="top">
       <th>HTML Code for your Animator:</th>
@@ -114,9 +133,19 @@
       <td colspan="2"><a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"></a></td>
     </tr>
 <?php } ?>
-  </table>
+			
+	<tr valign="top">
+		<th scope="row" width="33%"><label for="wpc_labels">Advanced Configuration:</label></th>
+		<td>
+		<input name="wpc_mode" type="checkbox" value="on" <?php if($wpc_mode == 'on') { echo "checked=\"checked\""; } ?> />
+		</td>
+		<td>If you want to configure more things, check this.</td>
+	</tr>
 
-  <p class="submit"><input type="hidden" name="submitted" /><input type="submit" name="Submit" value="<?php _e($rev_action);?> Update Settings &raquo;" /></p>
+			
+			
+  </table>
+    <div class="submit"> <input type="hidden" name="submitted" /><input type="submit" name="Submit" value="<?php _e($rev_action);?> Update Settings &raquo;" /></div>
 </form>
 
 </div>
