@@ -135,11 +135,9 @@ if ( !function_exists('imagegif') ) {
 <?php } ?>
 			
 	<tr valign="top">
-		<th scope="row" width="33%"><label for="wpc_labels">Advanced Configuration:</label></th>
-		<td>
-		<input name="wpc_mode" type="checkbox" value="on" <?php if($wpc_mode == 'on') { echo "checked=\"checked\""; } ?> />
-		</td>
-		<td>If you want to configure more things, check this.</td>
+		<th scope="row" width="33%">&nbsp;</th>
+		<td>&nbsp;</td>
+		<td align="right"><label for="wpc_labels"><strong>Advanced Configuration:</strong></label> <input name="wpc_mode" type="checkbox" value="on" <?php if($wpc_mode == 'on') { echo "checked=\"checked\""; } ?> /></td>
 	</tr>
 
 			
