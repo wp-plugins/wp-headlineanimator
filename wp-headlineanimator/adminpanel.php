@@ -139,14 +139,17 @@ if ( !function_exists('imagegif') ) {
     </tr>
 </table>
 <?php } ?>
- 
+</div>
+		
 <table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Settings 2" border="0">		  
 	<tr valign="top">
 		<th scope="row" width="33%">&nbsp;</th>
-		<td>&nbsp;</td>
-		<td align="right"><label for="wpc_labels"><strong>Advanced Configuration:</strong></label> <input name="wpc_mode" type="checkbox" value="on" <?php if($wpc_mode == 'on') { echo "checked=\"checked\""; } ?> /></td>
+		<td align="right" colspan="2"><label for="wpc_labels"><strong>Advanced Configuration:</strong></label> <input name="wpc_mode" type="checkbox" value="on" <?php if($wpc_mode == 'on') { echo "checked=\"checked\""; } ?> /></td>
+	</tr>
+	<tr valign="top">
+		<th scope="row" width="33%">&nbsp;</th>
+		<td align="right" colspan="2"><div class="submit"> <input type="hidden" name="submitted" /><input type="submit" name="Submit" value="<?php _e($rev_action);?> Update Settings &raquo;" /></div></td>
 	</tr>
 </table>
-    <div class="submit"> <input type="hidden" name="submitted" /><input type="submit" name="Submit" value="<?php _e($rev_action);?> Update Settings &raquo;" /></div>
-</div>
+
 </form>
