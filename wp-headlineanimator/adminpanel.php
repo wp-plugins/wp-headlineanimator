@@ -110,9 +110,8 @@ if ( !function_exists('imagegif') ) {
     </tr>
     <tr valign="top">
       <th scope="row" width="33%"><label for="wpc_labels">Date format:</label></th>
-      <td colspan="2">
-	<input name="wpc_dateformat" type="text" size="40" value="<?php echo $wpc_dateformat; ?>"/>
-      </td>
+      <td><input name="wpc_dateformat" type="text" size="40" value="<?php echo $wpc_dateformat; ?>"/></td>
+	  <td><label>see php <a href="http://www.php.net/date">date()</a></label></td>
     </tr>
     <tr valign="top">
       <th>&nbsp;</th>
