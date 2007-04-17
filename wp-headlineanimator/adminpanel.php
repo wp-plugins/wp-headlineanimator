@@ -127,15 +127,15 @@ if ( !function_exists('imagegif') ) {
 <table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Integration" border="0">
     <tr valign="top">
       <th>HTML Code for your Animator:</th>
-      <td colspan="2"> <label>&lt;a href="<?php echo get_settings('siteurl').'/'; ?>"&gt;&lt;img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"&gt;&lt;/a&gt;</label><td>
+      <td colspan="2"> <label>&lt;a href="<?php echo get_settings('siteurl').'/'; ?>"&gt;&lt;img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"&gt;&lt;/a&gt;</label></td>
     </tr>
 	<tr valign="top">
 			<th>BBCode for your Animator:</th>
-			<td colspan="2"><label>[url=<?php echo get_settings('siteurl').'/'; ?>][img]<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif[/img][/url]</label><td>
+			<td colspan="2"><label>[url=<?php echo get_settings('siteurl').'/'; ?>][img]<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif[/img][/url]</label></td>
 	</tr>
     <tr valign="top">
       <th>&nbsp;</th>
-      <td colspan="2"><a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"></a></td>
+      <td colspan="2"><a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif" alt="Headline Animator" /></a></td>
     </tr>
 </table>
 <?php } ?>
