@@ -215,8 +215,18 @@ function wpc_options_page() {
 	  if ($_POST['wpc_font']) update_option('wpc_font', $_POST['wpc_font']);
 	  if ($_POST['wpc_text']) update_option('wpc_text', $_POST['wpc_text']);
 	  if ($_POST['wpc_textcol']) update_option('wpc_textcol', $_POST['wpc_textcol']);
-	  if ($_POST['wpc_textsize']) update_option('wpc_textsize', intval($_POST['wpc_textsize']));
-	  if ($_POST['wpc_newssize']) update_option('wpc_newssize', intval($_POST['wpc_newssize']));
+	  
+	  if ($_POST['wpc_textsize'] && intval($_POST['wpc_textsize']) > 0 ) {
+		  update_option('wpc_textsize', intval($_POST['wpc_textsize']));
+	  } else {
+		  update_option('wpc_textsize', 16);
+	  }
+	  if ($_POST['wpc_newssize'] && intval($_POST['wpc_newssize']) > 0 ) {
+		  update_option('wpc_newssize', intval($_POST['wpc_newssize']));
+	  } else {
+		  update_option('wpc_newssize', 10);
+	  }
+	  
 	  if ($_POST['wpc_wantdate']) update_option('wpc_wantdate', $_POST['wpc_wantdate']);
 	  if ($_POST['wpc_dateformat']) update_option('wpc_dateformat', $_POST['wpc_dateformat']);
 	  update_option('wpc_mode', $_POST['wpc_mode']);
