@@ -16,10 +16,10 @@ if ( !function_exists('imagegif') ) {
 }
 ?>
 
+<form name="wpc-settings" action="" method="post">
+
 <div class="wrap">
   <h2> WP-Headline Animator</h2>
-
-<form name="wpc-settings" action="" method="post">
 
   <table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Settings" border="0">
     <tr valign="top">
@@ -96,7 +96,7 @@ if ( !function_exists('imagegif') ) {
       </td>
       <td>&nbsp;</td>
     </tr>
-			    
+
 	<tr valign="top">
 		<th>&nbsp;</th>
 		<td colspan="2">&nbsp;</td>
@@ -119,31 +119,34 @@ if ( !function_exists('imagegif') ) {
       <td colspan="2">&nbsp;</td>
     </tr>
 <?php } ?>
+	</table>
+</div>
 <? if ( file_exists( ABSPATH.'/'.$wpc_target.'.gif') ) { ?>
+<div class="wrap">
+<h2> Integration</h2>		
+<table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Integration" border="0">
     <tr valign="top">
       <th>HTML Code for your Animator:</th>
-      <td colspan="2"> &lt;a href="<?php echo get_settings('siteurl').'/'; ?>"&gt;&lt;img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"&gt;&lt;/a&gt;<td>
+      <td colspan="2"> <label>&lt;a href="<?php echo get_settings('siteurl').'/'; ?>"&gt;&lt;img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"&gt;&lt;/a&gt;</label><td>
     </tr>
 	<tr valign="top">
 			<th>BBCode for your Animator:</th>
-			<td colspan="2"> [url=<?php echo get_settings('siteurl').'/'; ?>][img]<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif[/img][/url]<td>
+			<td colspan="2"><label>[url=<?php echo get_settings('siteurl').'/'; ?>][img]<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif[/img][/url]</label><td>
 	</tr>
     <tr valign="top">
       <th>&nbsp;</th>
       <td colspan="2"><a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"></a></td>
     </tr>
+</table>
 <?php } ?>
-			
+ 
+<table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Settings 2" border="0">		  
 	<tr valign="top">
 		<th scope="row" width="33%">&nbsp;</th>
 		<td>&nbsp;</td>
 		<td align="right"><label for="wpc_labels"><strong>Advanced Configuration:</strong></label> <input name="wpc_mode" type="checkbox" value="on" <?php if($wpc_mode == 'on') { echo "checked=\"checked\""; } ?> /></td>
 	</tr>
-
-			
-			
-  </table>
+</table>
     <div class="submit"> <input type="hidden" name="submitted" /><input type="submit" name="Submit" value="<?php _e($rev_action);?> Update Settings &raquo;" /></div>
-</form>
-
 </div>
+</form>
