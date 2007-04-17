@@ -4,7 +4,7 @@ Donate link: http://my.stargazer.at/wishlist/
 Tags: post, image, signature
 Requires at least: 2.0
 Tested up to: 2.2-almost-beta
-Stable tag: 1.2
+Stable tag: 1.3
 
 
 WP-Headlineanimator generates an animated GIF File to be displayed in signatures
@@ -88,12 +88,16 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 
 == Changes ==
 
+= Version 1.4 =
+
+
 = Version 1.3 =
 - Font size now customizeable
 - Split off administration to seperate file
 - Introduced simple and advanced configuration
 - Got rid of the last hardcoded path information
 - Number of headlines to be displayed is now customizeable
+- Seperated display of the animator in the admin panel
 
 = Version 1.2 =
 - Reintroduced Polyglot support as it just did some weird 
