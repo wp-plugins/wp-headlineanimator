@@ -77,7 +77,7 @@ if ( !function_exists('imagegif') ) {
     <tr valign="top">
       <th scope="row" width="33%"><label for="wpc_labels">Text color:</label></th>
       <td>
-        <input name="wpc_textcol" type="text" size="40" value="<?php echo $wpc_textcol; ?>"/>
+        <input name="wpc_textcol" type="text" size="10" value="<?php echo $wpc_textcol; ?>"/>
       </td>
       <td>(HTML Notation like #740204)</td>
     </tr>
@@ -86,7 +86,7 @@ if ( !function_exists('imagegif') ) {
     <tr valign="top">
       <th scope="row" width="33%"><label for="wpc_labels">Text size:</label></th>
       <td>
-        <input name="wpc_textsize" type="text" size="40" value="<?php echo $wpc_textsize; ?>"/>
+        <input name="wpc_textsize" type="text" size="4" value="<?php echo $wpc_textsize; ?>"/>
       </td>
       <td>&nbsp;</td>
     </tr>
@@ -94,7 +94,7 @@ if ( !function_exists('imagegif') ) {
     <tr valign="top">
       <th scope="row" width="33%"><label for="wpc_labels">Newstext size:</label></th>
       <td>
-        <input name="wpc_newssize" type="text" size="40" value="<?php echo $wpc_newssize; ?>"/>
+        <input name="wpc_newssize" type="text" size="4" value="<?php echo $wpc_newssize; ?>"/>
       </td>
       <td>&nbsp;</td>
     </tr>
@@ -121,15 +121,15 @@ if ( !function_exists('imagegif') ) {
     </tr>
 	<tr valign="top">
 	  <th scope="row" width="33%"><label for="wpc_artnum">Headlines to display:</label></th>
-	  <td colspan="2"><input name="wpc_artnum" type="text" size="40" value="<?php echo $wpc_artnum; ?>"/></td>
+	  <td colspan="2"><input name="wpc_artnum" type="text" size="4" value="<?php echo $wpc_artnum; ?>"/></td>
 	</tr>
 	<tr valign="top">
 	  <th scope="row" width="33%"><label for="wpc_pictime">Headline display time (milliseconds) :</label></th>
-	  <td colspan="2"><input name="wpc_pictime" type="text" size="40" value="<?php echo $wpc_pictime; ?>"/></td>
+	  <td colspan="2"><input name="wpc_pictime" type="text" size="4" value="<?php echo $wpc_pictime; ?>"/></td>
 	</tr>
 	<tr valign="top">
 	  <th scope="row" width="33%"><label for="wpc_nopictime">Delay between headlines (milliseconds)</label></th>
-	  <td colspan="2"><input name="wpc_nopictime" type="text" size="40" value="<?php echo $wpc_nopictime; ?>"/></td>
+	  <td colspan="2"><input name="wpc_nopictime" type="text" size="4" value="<?php echo $wpc_nopictime; ?>"/></td>
 	</tr>
 					  
 <?php } ?>
