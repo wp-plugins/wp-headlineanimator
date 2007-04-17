@@ -89,7 +89,7 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 == Changes ==
 
 = Version 1.4 =
-
+- Timing is now configureable
 
 = Version 1.3 =
 - Font size now customizeable
