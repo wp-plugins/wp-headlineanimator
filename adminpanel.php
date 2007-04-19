@@ -1,17 +1,23 @@
 <?php
-  $wpc_image 	= get_option('wpc_image');
-  $wpc_font 	= get_option('wpc_font');
-  $wpc_target 	= get_option('wpc_target');
-  $wpc_text 	= get_option('wpc_text');
-  $wpc_textcol 	= get_option('wpc_textcol');
-  $wpc_textsize = get_option('wpc_textsize');
-  $wpc_newssize = get_option('wpc_newssize');
-  $wpc_wantdate = get_option('wpc_wantdate');
-  $wpc_dateformat = get_option('wpc_dateformat');
-  $wpc_mode 	= get_option('wpc_mode');
-  $wpc_artnum 	= get_option('wpc_artnum');
-  $wpc_pictime	= get_option('wpc_pictime');
-  $wpc_nopictime= get_option('wpc_nopictime');
+  $wpc_image 		= get_option('wpc_image');
+  $wpc_font 		= get_option('wpc_font');
+  $wpc_target 		= get_option('wpc_target');
+  $wpc_text 		= get_option('wpc_text');
+  $wpc_textcol 		= get_option('wpc_textcol');
+  $wpc_textsize 	= get_option('wpc_textsize');
+  $wpc_newssize 	= get_option('wpc_newssize');
+  $wpc_wantdate 	= get_option('wpc_wantdate');
+  $wpc_dateformat	= get_option('wpc_dateformat');
+  $wpc_mode 		= get_option('wpc_mode');
+  $wpc_artnum 		= get_option('wpc_artnum');
+  $wpc_pictime		= get_option('wpc_pictime');
+  $wpc_nopictime	= get_option('wpc_nopictime');
+  $wpc_remotetarget	= get_option('wpc_remotetarget');
+  $wpc_ftp_server	= get_option('wpc_ftp_server');
+  $wpc_ftp_user		= get_option('wpc_ftp_user');
+  $wpc_ftp_pass		= get_option('wpc_ftp_pass');
+  $wpc_ftp_path		= get_option('wpc_ftp_path');
+  $wpc_ftp_target	= get_option('wpc_ftp_target');
 		
 if ( !function_exists('imagegif') ) {
 		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">You have no GIF Support in your GDLib. This Plugin will not work</font></h3></div>';
@@ -52,14 +58,53 @@ if ( !function_exists('imagegif') ) {
 		<th>&nbsp;</th>
 		<td colspan="2">&nbsp;</td>
 	</tr>
-			  
+
+	<tr valign="top">
+      <th scope="row" width="33%"><label for="wpc_labels">Store animator on remote FTP Server:</label></th>
+      <td colspan="2">
+		<input name="wpc_remotetarget" type="checkbox" value="on" <?php if($wpc_remotetarget == 'on') { echo "checked=\"checked\""; } ?> />
+      </td>
+    </tr>
+ 
+<?php if ( $wpc_remotetarget=='on' ) { ?>
+	<tr valign="top">
+      <th scope="row" width="33%"><label for="wpc_labels">Remote FTP Host:</label></th>
+      <td>
+        <input name="wpc_ftp_server" type="text" size="35" value="<?php echo $wpc_ftp_server; ?>"/>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr valign="top">
+      <th scope="row" width="33%"><label for="wpc_labels">FTP User:</label></th>
+      <td>
+        <input name="wpc_ftp_user" type="text" size="35" value="<?php echo $wpc_ftp_user; ?>"/>
+      </td>
+      <td>&nbsp;</td>
+    </tr> 
+	<tr valign="top">
+      <th scope="row" width="33%"><label for="wpc_labels">FTP Password:</label></th>
+      <td>
+        <input name="wpc_ftp_pass" type="text" size="35" value="<?php echo $wpc_ftp_pass; ?>"/>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr valign="top">
+      <th scope="row" width="33%"><label for="wpc_labels">FTP path and target:</label></th>
+      <td>
+        <input name="wpc_ftp_target" type="text" size="35" value="<?php echo $wpc_ftp_target; ?>"/>.gif
+      </td>
+	 <td>(remote path starting with '/')</td>
+    </tr>
+<?php } ?>
+
     <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Target:</label></th>
+      <th scope="row" width="33%"><label for="wpc_labels">Filename on Blog-Server:</label></th>
       <td>
         <input name="wpc_target" type="text" size="35" value="<?php echo $wpc_target; ?>"/>.gif
       </td>
-      <td>(relative to your WP install)</td>
+	 <td>(relative to your WP install)</td>
     </tr>
+
  
     <tr valign="top">
       <th>&nbsp;</th>
@@ -107,7 +152,7 @@ if ( !function_exists('imagegif') ) {
     <tr valign="top">
       <th scope="row" width="33%"><label for="wpc_labels">Show date on animator:</label></th>
       <td colspan="2">
-	<input name="wpc_wantdate" type="checkbox" value="on" <?php if($wpc_wantdate == 'on') { echo "checked=\"checked\""; } ?> />
+		<input name="wpc_wantdate" type="checkbox" value="on" <?php if($wpc_wantdate == 'on') { echo "checked=\"checked\""; } ?> />
       </td>
     </tr>
     <tr valign="top">
