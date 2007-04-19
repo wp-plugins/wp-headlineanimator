@@ -118,20 +118,25 @@ function wpc_write() {
 // now slammin' the remix together for some 'bling bling'
     $animgif = $anim->getAnimation();
 
-    $f = fopen( ABSPATH . '/' . get_option('wpc_target').'.gif' , "w");
-    fwrite($f, $animgif);
-    fclose($f);
+// we have to write it anyways
+	$f = fopen( ABSPATH . '/' . get_option('wpc_target').'.gif' , "w");
+	fwrite($f, $animgif);
+	
+	
+	if ( get_option('wpc_remotetarget')=='on' ) {
+		export2ftp( ABSPATH . '/' . get_option('wpc_target').'.gif' );
+	}
+	
+	fclose($f);
 }
 
 function readpic($picture_src) {
 	/**
-	*
 	* Picture loader. Life is like a box of chocolate - we don't know what we'll get.
 	* So let's pretend the user knows what he's doing, using valid extensions...
-	*
 	**/
-	$extension = strtolower(strrchr($picture_src, '.'));
 	
+	$extension = strtolower(strrchr($picture_src, '.'));
 	switch ($extension) {
 		case '.gif':
 			$picture     = imagecreatefromgif( $picture_src );
@@ -150,13 +155,30 @@ function readpic($picture_src) {
 	return $picture;
 }
 
+function export2ftp($src_image) {
+	/** 
+	 *  Some people want to have the animator offsite - here's the transfer
+	 **/
+	if ( !get_option('wpc_ftp_server') ) return;
+	$ftpcon = ftp_connect(get_option('wpc_ftp_server')); 
+	$login_result = ftp_login($ftpcon, get_option('wpc_ftp_user'), get_option('wpc_ftp_pass'));
+	if ((!$ftpcon) || (!$login_result)) { 
+		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">FTP connection has failed! Check Hostname and Login!</font></h3></div>';
+		exit; 
+	} 
+	//        ftp_fput($conn_id, $file                      , $fp         , FTP_ASCII)
+	$upload = ftp_put($ftpcon, '/'.get_option('wpc_ftp_target').'.gif' , $src_image, FTP_BINARY); 
+	if (!$upload) { 
+		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">FTP upload has failed!</font></h3></div>';
+	} 
+	ftp_close($ftpcon);
+}
 
 function gif2string($image) {
 	/**
-	 * 
 	 * catch the output of imagegif as we need gif images to pass it to the MergerClass
-	 * 
 	 **/
+	
 	ob_start();
 	$contents = ob_get_contents();
 	if ($contents !== false) ob_clean(); else ob_start();
@@ -199,14 +221,20 @@ function wpc_install() {
 		update_option('wpc_image', ABSPATH . 'background.png');
 		update_option('wpc_target', 'animator');
 		update_option('wpc_textcol', '#740204');
-		update_option('wpc_textsize', '16');
-		update_option('wpc_newssize', '10');
+		update_option('wpc_textsize', 16);
+		update_option('wpc_newssize', 10);
 		update_option('wpc_text', 'Now online:');
 		update_option('wpc_wantdate', 'off');
 		update_option('wpc_mode', 'off');
-		update_option('wpc_artnum', '5');
+		update_option('wpc_artnum', 5);
 		update_option('wpc_pictime', 300);
 		update_option('wpc_nopictime', 50);
+		update_option('wpc_remotetarget', 'off');
+		update_option('wpc_ftp_server', 'localhost');
+		update_option('wpc_ftp_user', 'anonymous');
+		update_option('wpc_ftp_pass', 'me@mymail.com');
+		update_option('wpc_ftp_path', '/myhome/');
+		update_option('wpc_ftp_target', '/animator');
 	}
 }
 
@@ -218,6 +246,12 @@ function wpc_options_page() {
 	  if ($_POST['wpc_font']) update_option('wpc_font', $_POST['wpc_font']);
 	  if ($_POST['wpc_text']) update_option('wpc_text', $_POST['wpc_text']);
 	  if ($_POST['wpc_textcol']) update_option('wpc_textcol', $_POST['wpc_textcol']);
+	  if ($_POST['wpc_wantdate']) update_option('wpc_wantdate', $_POST['wpc_wantdate']);
+	  if ($_POST['wpc_dateformat']) update_option('wpc_dateformat', $_POST['wpc_dateformat']);
+	  if ($_POST['wpc_ftp_user']) update_option('wpc_ftp_user', $_POST['wpc_ftp_user']);
+	  if ($_POST['wpc_ftp_pass']) update_option('wpc_ftp_pass', $_POST['wpc_ftp_pass']);
+	  if ($_POST['wpc_ftp_path']) update_option('wpc_ftp_path', $_POST['wpc_ftp_path']);
+	  if ($_POST['wpc_ftp_target']) update_option('wpc_ftp_target', $_POST['wpc_ftp_target']);
 	  
 	  if ($_POST['wpc_textsize'] && intval($_POST['wpc_textsize']) > 0 ) {
 		  update_option('wpc_textsize', intval($_POST['wpc_textsize']));
@@ -245,10 +279,8 @@ function wpc_options_page() {
 		  update_option('wpc_nopictime', 50);
 	  }
 	  
-	  if ($_POST['wpc_wantdate']) update_option('wpc_wantdate', $_POST['wpc_wantdate']);
-	  if ($_POST['wpc_dateformat']) update_option('wpc_dateformat', $_POST['wpc_dateformat']);
-	  
-	  
+	  update_option('wpc_ftp_server', $_POST['wpc_ftp_server']);
+	  update_option('wpc_remotetarget', $_POST['wpc_remotetarget']);
 	  update_option('wpc_mode', $_POST['wpc_mode']);
     wpc_write();
   }
