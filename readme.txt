@@ -75,6 +75,12 @@ If the labels are written in red, the plugin cannot access the files. Keep in mi
 * the background picture path is relative to your wordpress directory
 * the font file uses an absolute path as most distributions are installing fonts to /usr/share/fonts/...
 
+= Does the remote FTP Server need to have PHP or something like that? =
+The remote FTP server will just act as a file storage. 
+
+= I got a question not covered by this FAQ =
+Feel free to contact me. I'll extend the FAQ with your questions and provide support.
+
 == Screenshots ==
 None avaliable. If you want to see it in action, look at http://my.stargazer.at/starblog.gif
 
