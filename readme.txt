@@ -3,7 +3,7 @@ Contributors: Stargazer
 Donate link: http://my.stargazer.at/wishlist/
 Tags: post, image, signature
 Requires at least: 2.0
-Tested up to: 2.2-almost-beta
+Tested up to: latest svn
 Stable tag: 1.4
 
 
