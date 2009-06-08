@@ -85,7 +85,7 @@ Feel free to contact me. I'll extend the FAQ with your questions and provide sup
 None avaliable. If you want to see it in action, look at http://my.stargazer.at/starblog.gif
 
 == Todo ==
-* internal upload for the background image
+* internal upload for the background image - maybe gallery implementation?
 
 
 == Bugs ==
