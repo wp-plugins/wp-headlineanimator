@@ -3,7 +3,7 @@
 Plugin Name: wp-headlineanimator
 Plugin URI: http://www.stargazer.at/projekte
 Description: Generates a graphic like the FB Headline Animator. More info in my blog posts on my.stargazer.at...
-Version: 1.4
+Version: 1.5
 Author: Christoph "Stargazer" Bauer
 Author URI: http://my.stargazer.at/
 
@@ -51,7 +51,7 @@ function wpc_write() {
 		$textdate	= date( get_option('wpc_dateformat'),strtotime($post->post_date));
 	}
 	
-	if ( function_exists('polyglot_filter') ) $text = polyglot_filter($text); // just to be sure
+	if ( function_exists('qtrans_useDefaultLanguage') ) $text = qtrans_useDefaultLanguage($text); // just to be sure
 
 // do some option handling
 	if ( get_option('wpc_wantdate') == 'on' && $text ) $text = $textdate  . ' - ' . $text;

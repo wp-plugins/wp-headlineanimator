@@ -26,7 +26,7 @@ or wherever you like to advertise for your Blog.
 == Features ==
 * As a forum signature can be called _very_often_, it is pointless generating the picture from scratch via PHP
 * The gif image is updated everytime you WRITE, DELETE or MODIFY a post.
-* The Plugin is Polyglot-Compatible (this is a plugin for multilingual blogs)
+* The Plugin is qTranslate-Compatible (this is a plugin for multilingual blogs)
 
 == Installation ==
 1. Upload the contents of the wp-headlineanimator directory into your wordpress plugin directory.
@@ -93,6 +93,10 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 
 
 == Changes ==
+
+= Version 1.5 =
+- Fixed a typo
+- Changed from Polyglot to qTranslate Support
 
 = Version 1.4 =
 - Timing is now configureable
