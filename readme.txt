@@ -2,7 +2,7 @@
 Contributors: Stargazer
 Donate link: http://my.stargazer.at/wishlist/
 Tags: post, image, signature
-Requires at least: 2.0
+Requires at least: 3.0
 Tested up to: latest svn
 Stable tag: trunk
 
@@ -96,6 +96,7 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 
 = Version 1.6 =
 - Corrected PHP short-tag settings issue
+- drop support for wp < 3.0
 
 = Version 1.5 =
 - Fixed a typo
