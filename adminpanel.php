@@ -180,7 +180,7 @@ if ( !function_exists('imagegif') ) {
 <?php } ?>
 	</table>
 </div>
-<? if ( file_exists( ABSPATH.'/'.$wpc_target.'.gif') ) { ?>
+<?php if ( file_exists( ABSPATH.'/'.$wpc_target.'.gif') ) { ?>
 <div class="wrap">
 <h2> Integration</h2>		
 <table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Integration" border="0">
