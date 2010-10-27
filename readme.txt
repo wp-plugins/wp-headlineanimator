@@ -94,6 +94,9 @@ None avaliable. If you want to see it in action, look at http://my.stargazer.at/
 
 == Changes ==
 
+= Version 1.6 =
+- Corrected PHP short-tag settings issue
+
 = Version 1.5 =
 - Fixed a typo
 - Changed from Polyglot to qTranslate Support
