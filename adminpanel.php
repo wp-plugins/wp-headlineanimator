@@ -197,7 +197,7 @@ if ( !function_exists('imagegif') ) {
       <td colspan="2"><a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif" alt="Headline Animator" /></a></td>
     </tr>
 </table>
-<?php // } ?>
+<?php  } ?>
 </div>
 		
 <table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Settings 2" border="0">		  
