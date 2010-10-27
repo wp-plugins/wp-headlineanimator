@@ -16,7 +16,7 @@ or wherever you like to advertise for your Blog.
  for your Blog.
 
 == Requirements ==
-* Wordpress >= 2.1
+* Wordpress >= 3.0
 * some time
 * Access to your webserver
 * A background picture for your signature
