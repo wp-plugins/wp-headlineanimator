@@ -1,31 +1,34 @@
 <?php
-/*
-Plugin Name: wp-headlineanimator
-Plugin URI: http://www.stargazer.at/projekte
-Description: Generates a graphic like the FB Headline Animator. More info in my blog posts on my.stargazer.at...
-Version: 1.6
-Author: Christoph "Stargazer" Bauer
-Author URI: http://my.stargazer.at/
-
-For Info see README
-*/
-
-/*  Copyright 2007  Christoph "Stargazer" Bauer  (email via http://my.stargazer.at/impressum-kontakt/ )
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+/**
+ * @package WP-HeadlineAnimator
+ * @author Christoph "Stargazer" Bauer
+ * @version 2.0.0
  */
+/*
+ Plugin Name: WP-HeadlineAnimator
+ Plugin URI: http://www.stargazer.at/projekte
+ Description: Generates a graphic like the FB Headline Animator. More info in my blog posts on my.stargazer.at...
+ Version: 1.6
+ Author: Christoph "Stargazer" Bauer
+ Author URI: http://my.stargazer.at/
+ 
+ Author URI: http://my.stargazer.at/
+ 
+ Copyright 2010 Christoph Bauer  (email : cbauer@stargazer.at)
+ 
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License, version 2, as
+ published by the Free Software Foundation.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ */
+
+// Securing against direct calls
+if (!defined('ABSPATH')) die("Called directly. Taking the emergency exit.");
 
 function wpc_write() {
   require_once('GifMerge.class.php');
@@ -163,13 +166,13 @@ function export2ftp($src_image) {
 	$ftpcon = ftp_connect(get_option('wpc_ftp_server')); 
 	$login_result = ftp_login($ftpcon, get_option('wpc_ftp_user'), get_option('wpc_ftp_pass'));
 	if ((!$ftpcon) || (!$login_result)) { 
-		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">FTP connection has failed! Check Hostname and Login!</font></h3></div>';
+		echo '<div class="wrap"><h2>' . __('Error', 'wp-headlineanimator') . '!</h2><h3><font color="red">' . __('FTP connection has failed! Check Hostname and Login!', 'wp-headlineanimator') . '</font></h3></div>';
 		exit; 
 	} 
 	//        ftp_fput($conn_id, $file                      , $fp         , FTP_ASCII)
 	$upload = ftp_put($ftpcon, '/'.get_option('wpc_ftp_target').'.gif' , $src_image, FTP_BINARY); 
-	if (!$upload) { 
-		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">FTP upload has failed!</font></h3></div>';
+	if (!$upload) {
+		echo '<div class="wrap"><h2>' . __('Error', 'wp-headlineanimator') . '!</h2><h3><font color="red">' . __('FTP upload has failed!', 'wp-headlineanimator') . '</font></h3></div>';
 	} 
 	ftp_close($ftpcon);
 }
@@ -289,6 +292,19 @@ include('adminpanel.php');
 
 }
 
+function wpc_textdomain() {
+	if (function_exists('load_plugin_textdomain')) {
+		if ( !defined('WP_PLUGIN_DIR') ) {
+			load_plugin_textdomain('wp-headlineanimator', str_replace( ABSPATH, '', dirname(__FILE__) ) . '/languages');
+			
+		} else {
+			load_plugin_textdomain('wp-headlineanimator', false, dirname( plugin_basename(__FILE__) ) . '/languages');
+		}
+		
+	}
+}
+
+  add_action('init', 'wpc_textdomain');
   add_action('admin_menu'  , 'wpc_add_page');
   add_action('activate_wp-headlineanimator/wp-headlineanimator.php', 'wpc_install');
   add_action('publish_post', 'wpc_write');

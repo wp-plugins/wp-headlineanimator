@@ -1,4 +1,7 @@
 <?php
+// Securing against direct calls
+if (!defined('ABSPATH')) die("Called directly. Taking the emergency exit.");
+
   $wpc_image 		= get_option('wpc_image');
   $wpc_font 		= get_option('wpc_font');
   $wpc_target 		= get_option('wpc_target');
@@ -20,195 +23,175 @@
   $wpc_ftp_target	= get_option('wpc_ftp_target');
 		
 if ( !function_exists('imagegif') ) {
-		echo '<div class="wrap"><h2>Error!</h2><h3><font color="red">You have no GIF Support in your GDLib. This Plugin will not work</font></h3></div>';
+	echo '<div class="wrap"><h2>' . __('Error', 'wp-headlineanimator') . '!</h2><h3><font color="red">' . __('You have no GIF Support in your GDLib. This Plugin will not work!', 'wp-headlineanimator') . '</font></h3></div>';;
 }
 ?>
 
+
+
+<div class="wrap">
+<?php
+echo '<h2>' . __('WP-HeadlineAnimator - Settings', 'wp-headlineanimator') . '</h2>';
+
+if(isset($_POST['submitted'])) echo '<div style="border:1px outset gray; margin:.5em; padding:.5em; background-color:#efd;">' . __('Settings updated.', 'wp-headlineanimator') . '</div>';
+
+echo '<h3>' . __('Settings', 'wp-headlineanimator') . '</h3>';
+?>
+
 <form name="wpc-settings" action="" method="post">
-
-<div class="wrap">
-  <h2> WP-Headline Animator</h2>
-
-  <table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Settings" border="0">
-    <tr valign="top">
-		<th scope="row" width="33%"><label for="wpc_structure">
-		<?php if ( !file_exists( ABSPATH.'/'.get_option('wpc_image')) ) echo '<font color="#ff0000">'; ?>Background image:<?php if ( !file_exists( ABSPATH.'/'.get_option('wpc_image') ) ) echo '</font>'; ?>
-		</label></th>
-      <td width="300px">
-        <input name="wpc_image" type="text" size="40" value="<?php echo $wpc_image ?>"/>
-      </td>
-      <td>(relative to your WP install)</td>
-    </tr>
-
-    <tr valign="top">
-	<?php if ( !get_option('wpc_font') ) echo '<font color="#ff0000">'; ?>
-		<th scope="row" width="33%"><label for="wpc_labels">
-		<?php if ( !get_option('wpc_font') || !file_exists(get_option('wpc_font')) ) echo '<font color="#ff0000">'; ?>Font file:<?php if ( !get_option('wpc_font') || !file_exists(get_option('wpc_font')) ) echo '</font>'; ?>
-		</label></th>
-      <td>
-        <input name="wpc_font" type="text" size="40" value="<?php echo $wpc_font; ?>"/>
-      </td>
-      <td>(TTF File on the server)</td>
-    </tr>
-	<tr valign="top">
-		<th>&nbsp;</th>
-			  <td colspan="2">If your TTF file is in the same directory as this plugin, I am expecting "<?= ABSPATH  ?>wp-content/plugins/wp-headlineanimator/myfont.ttf" here.</td>
+<table cellspacing="2" cellpadding="5" class="editform" summary="WP-BlackCheck Settings" border="0">
+	<tr height="30px">
+		<td colspan="3"><strong><?php _e('Image Settings:', 'wp-blackcheck'); ?></strong></td>
 	</tr>
-	<tr valign="top">
-		<th>&nbsp;</th>
-		<td colspan="2">&nbsp;</td>
+	<tr>
+		<td><?php if ( !file_exists( ABSPATH.'/'.get_option('wpc_image')) ) echo '<font color="#ff0000">'; ?><?php  _e('Background image:', 'wp-headlineanimator'); ?><?php if ( !file_exists( ABSPATH.'/'.get_option('wpc_image') ) ) echo '</font>'; ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_image" type="text" size="100" value="<?php echo $wpc_image ?>" /></td>
 	</tr>
-
-	<tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Store animator on remote FTP Server:</label></th>
-      <td colspan="2">
-		<input name="wpc_remotetarget" type="checkbox" value="on" <?php if($wpc_remotetarget == 'on') { echo "checked=\"checked\""; } ?> />
-      </td>
-    </tr>
- 
+	<tr>
+		<td colspan="3"><small><?php  _e('(relative to your WP install)', 'wp-headlineanimator'); ?><small></td>
+	</tr>
+	<tr>
+		<td><?php if ( !get_option('wpc_font') || !file_exists(get_option('wpc_font')) ) echo '<font color="#ff0000">'; ?><?php  _e('Font file:', 'wp-headlineanimator'); ?><?php if ( !get_option('wpc_font') || !file_exists(get_option('wpc_font')) ) echo '</font>'; ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_font" type="text" size="100" value="<?php echo $wpc_font; ?>" /></td>
+	</tr>
+	<tr>
+		<td colspan="3"><small><?php echo sprintf ( __('If your TTF file is in the same directory as this plugin, I am expecting %s here.', 'wp-blackcheck'), ABSPATH .str_replace(basename( __FILE__),"",plugin_basename(__FILE__)) . 'myfont.ttf' ) ?><small></td>
+	</tr>
+	<tr height="30px">
+		<td colspan="3"><strong><?php _e('Storage Settings:', 'wp-blackcheck'); ?></strong></td>
+	</tr>
+	<tr>
+		<td><?php  _e('Filename of the HeadlineAnimator:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_target" type="text" size="35" value="<?php echo $wpc_target; ?>" />.gif</td>
+	</tr>
+	<tr>
+		<td colspan="3"><small><?php  _e('(relative to your WP install)', 'wp-headlineanimator'); ?><small></td>
+	</tr>
+	<tr>
+		<td colspan="3"><input name="wpc_remotetarget" type="checkbox" value="on" <?php if($wpc_remotetarget == 'on') { echo "checked=\"checked\""; } ?> /> <?php  _e('Store animator on remote FTP Server', 'wp-headlineanimator'); ?></td>
+	</tr>
 <?php if ( $wpc_remotetarget=='on' ) { ?>
-	<tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Remote FTP Host:</label></th>
-      <td>
-        <input name="wpc_ftp_server" type="text" size="35" value="<?php echo $wpc_ftp_server; ?>"/>
-      </td>
-      <td>&nbsp;</td>
-    </tr>
-	<tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">FTP User:</label></th>
-      <td>
-        <input name="wpc_ftp_user" type="text" size="35" value="<?php echo $wpc_ftp_user; ?>"/>
-      </td>
-      <td>&nbsp;</td>
-    </tr> 
-	<tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">FTP Password:</label></th>
-      <td>
-        <input name="wpc_ftp_pass" type="text" size="35" value="<?php echo $wpc_ftp_pass; ?>"/>
-      </td>
-      <td>&nbsp;</td>
-    </tr>
-	<tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">FTP path and target:</label></th>
-      <td>
-        <input name="wpc_ftp_target" type="text" size="35" value="<?php echo $wpc_ftp_target; ?>"/>.gif
-      </td>
-	 <td>(remote path starting with '/')</td>
-    </tr>
+	<tr>
+		<td><?php  _e('Remote FTP Host:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_ftp_server" type="text" size="35" value="<?php echo $wpc_ftp_server; ?>" /></td>
+	</tr>
+	<tr>
+		<td><?php  _e('FTP User:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_ftp_user" type="text" size="35" value="<?php echo $wpc_ftp_user; ?>" /></td>
+	</tr>
+	<tr>
+		<td><?php  _e('FTP Password:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_ftp_pass" type="text" size="35" value="<?php echo $wpc_ftp_pass; ?>" /></td>
+	</tr>
+	<tr>
+		<td><?php  _e('FTP path and target:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_ftp_target" type="text" size="35" value="<?php echo $wpc_ftp_target; ?>" />.gif</td>
+	</tr>
+	<tr>
+		<td colspan="3"><small><?php  _e('(remote path starting with "/")', 'wp-headlineanimator'); ?><small></td>
+	</tr>
 <?php } ?>
+	<tr height="30px">
+		<td colspan="3"><strong><?php _e('Design Settings:', 'wp-blackcheck'); ?></strong></td>
+	</tr>
+	<tr>
+		<td><?php  _e('Text on Picture:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_text" type="text" size="40" value="<?php echo $wpc_text; ?>" /></td>
+	</tr>
+		<tr>
+		<td><?php  _e('Text color:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_textcol" type="text" size="10" value="<?php echo $wpc_textcol; ?>" /></td>
+	</tr>
+	<tr height="30px">
+		<td colspan="3"><small><?php  _e('(HTML Notation like #740204)', 'wp-headlineanimator'); ?></small></td>
+	</tr>
+	<tr>
+		<td><?php  _e('Text size:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_textsize" type="text" size="4" value="<?php echo $wpc_textsize; ?>" /></td>
+	</tr>
+	<tr>
+		<td><?php  _e('Newstext size:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_newssize" type="text" size="4" value="<?php echo $wpc_newssize; ?>" /></td>
+	</tr>
 
-    <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Filename on Blog-Server:</label></th>
-      <td>
-        <input name="wpc_target" type="text" size="35" value="<?php echo $wpc_target; ?>"/>.gif
-      </td>
-	 <td>(relative to your WP install)</td>
-    </tr>
+	<tr>
+		<td colspan="3"> <input name="wpc_mode" type="checkbox" value="on" <?php if($wpc_mode == 'on') { echo "checked=\"checked\""; } ?> /> <?php  _e('Advanced Configuration', 'wp-headlineanimator'); ?></td>
+	</tr>
 
- 
-    <tr valign="top">
-      <th>&nbsp;</th>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-
-    <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Text on Picture:</label></th>
-      <td>
-        <input name="wpc_text" type="text" size="40" value="<?php echo $wpc_text; ?>"/>
-      </td>
-      <td>&nbsp;</td>
-    </tr>
-
-    <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Text color:</label></th>
-      <td>
-        <input name="wpc_textcol" type="text" size="10" value="<?php echo $wpc_textcol; ?>"/>
-      </td>
-      <td>(HTML Notation like #740204)</td>
-    </tr>
-
+	
+	<tr>
+		<td colspan="3"><input name="wpc_wantdate" type="checkbox" value="on" <?php if($wpc_wantdate == 'on') { echo "checked=\"checked\""; } ?> /> <?php  _e('Show date on animator', 'wp-headlineanimator'); ?></td>
+	</tr>
 <?php if ($wpc_mode == 'on') { ?>
-    <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Text size:</label></th>
-      <td>
-        <input name="wpc_textsize" type="text" size="4" value="<?php echo $wpc_textsize; ?>"/>
-      </td>
-      <td>&nbsp;</td>
-    </tr>
-
-    <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Newstext size:</label></th>
-      <td>
-        <input name="wpc_newssize" type="text" size="4" value="<?php echo $wpc_newssize; ?>"/>
-      </td>
-      <td>&nbsp;</td>
-    </tr>
-
-	<tr valign="top">
-		<th>&nbsp;</th>
-		<td colspan="2">&nbsp;</td>
+<?php if($wpc_wantdate == 'on') { ?>
+	<tr>
+		<td><?php  _e('Date format:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_dateformat" type="text" size="40" value="<?php echo $wpc_dateformat; ?>" /></td>
 	</tr>
-
-    <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Show date on animator:</label></th>
-      <td colspan="2">
-		<input name="wpc_wantdate" type="checkbox" value="on" <?php if($wpc_wantdate == 'on') { echo "checked=\"checked\""; } ?> />
-      </td>
-    </tr>
-    <tr valign="top">
-      <th scope="row" width="33%"><label for="wpc_labels">Date format:</label></th>
-      <td><input name="wpc_dateformat" type="text" size="40" value="<?php echo $wpc_dateformat; ?>"/></td>
-	  <td><label>see php <a href="http://www.php.net/date">date()</a></label></td>
-    </tr>
-    <tr valign="top">
-      <th>&nbsp;</th>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-	<tr valign="top">
-	  <th scope="row" width="33%"><label for="wpc_artnum">Headlines to display:</label></th>
-	  <td colspan="2"><input name="wpc_artnum" type="text" size="4" value="<?php echo $wpc_artnum; ?>"/></td>
+	<tr height="30px">
+		<td colspan="3"><small><?php  echo sprintf ( __('see php manual for <a href="%s" target="_blank">date()</a>.', 'wp-blackcheck'), 'http://www.php.net/date' ); ?></small></td>
 	</tr>
-	<tr valign="top">
-	  <th scope="row" width="33%"><label for="wpc_pictime">Headline display time (milliseconds) :</label></th>
-	  <td colspan="2"><input name="wpc_pictime" type="text" size="4" value="<?php echo $wpc_pictime; ?>"/></td>
+<?php } ?> 
+	<tr>
+		<td><?php  _e('Headlines to display:', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_artnum" type="text" size="4" value="<?php echo $wpc_artnum; ?>" /></td>
 	</tr>
-	<tr valign="top">
-	  <th scope="row" width="33%"><label for="wpc_nopictime">Delay between headlines (milliseconds)</label></th>
-	  <td colspan="2"><input name="wpc_nopictime" type="text" size="4" value="<?php echo $wpc_nopictime; ?>"/></td>
+	<tr>
+		<td><?php  _e('Headline display time (milliseconds):', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_pictime" type="text" size="4" value="<?php echo $wpc_pictime; ?>" /></td>
 	</tr>
-					  
+	<tr>
+		<td><?php  _e('Delay between headlines (milliseconds):', 'wp-headlineanimator'); ?></td>
+		<td>&nbsp;</td>
+		<td><input name="wpc_nopictime" type="text" size="4" value="<?php echo $wpc_nopictime; ?>" /></td>
+	</tr>
 <?php } ?>
-	</table>
-</div>
-<?php if ( file_exists( ABSPATH.'/'.$wpc_target.'.gif') ) { ?>
-<div class="wrap">
-<h2> Integration</h2>		
-<table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Integration" border="0">
-    <tr valign="top">
-      <th>HTML Code for your Animator:</th>
-      <td colspan="2"> <label>&lt;a href="<?php echo get_settings('siteurl').'/'; ?>"&gt;&lt;img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"&gt;&lt;/a&gt;</label></td>
-    </tr>
-	<tr valign="top">
-			<th>BBCode for your Animator:</th>
-			<td colspan="2"><label>[url=<?php echo get_settings('siteurl').'/'; ?>][img]<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif[/img][/url]</label></td>
-	</tr>
-    <tr valign="top">
-      <th>&nbsp;</th>
-      <td colspan="2"><a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif" alt="Headline Animator" /></a></td>
-    </tr>
-</table>
-<?php  } ?>
-</div>
-		
-<table width="100%" cellspacing="2" cellpadding="5" class="editform" summary="WP-Headline Animator Settings 2" border="0">		  
-	<tr valign="top">
-		<th scope="row" width="33%">&nbsp;</th>
-		<td align="right" colspan="2"><label for="wpc_labels"><strong>Advanced Configuration:</strong></label> <input name="wpc_mode" type="checkbox" value="on" <?php if($wpc_mode == 'on') { echo "checked=\"checked\""; } ?> /></td>
-	</tr>
-	<tr valign="top">
-		<th scope="row" width="33%">&nbsp;</th>
-		<td align="right" colspan="2"><div class="submit"> <input type="hidden" name="submitted" /><input type="submit" name="Submit" value="<?php _e($rev_action);?> Update Settings &raquo;" /></div></td>
+
+	<tr>
+		<td align="right" colspan="3">
+		<div class="submit"><input type="hidden" name="submitted" /><input type="submit" name="Submit" value="<?php _e($rev_action, 'wp-headlineanimator');?> <?php _e('Update Settings', 'wp-headlineanimator'); ?> &raquo;" /></div>
+		</td>
 	</tr>
 </table>
 
+<?php if ( file_exists( ABSPATH.'/'.$wpc_target.'.gif') ) { ?>
+<?php echo '<h2>' . __('Integration', 'wp-headlineanimator') . '</h2>'; ?>
+
+<table cellspacing="2" cellpadding="5" class="editform" summary="<?php  _e('Integration', 'wp-headlineanimator'); ?>" border="0">
+	<tr height="30px">
+		<td colspan="3"><?php  _e('HTML Code for your Animator:', 'wp-headlineanimator'); ?></td>
+	</tr>
+	<tr height="30px">
+		<td colspan="3"><input name="wpc_html_code" type="text" size="150" value='<a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif"></a>' /></td>
+	</tr>
+	<tr height="30px">
+		<td colspan="3"><?php  _e('bbCode for your Animator:', 'wp-headlineanimator'); ?></td>
+	</tr>
+	<tr height="30px">
+		<td colspan="3"><input name="wpc_bb_code" type="text" size="150" value='[url=<?php echo get_settings('siteurl').'/'; ?>][img]<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif[/img][/url]' /></td>
+	</tr>
+</table>
+
+<?php echo '<h3>' . __('Preview', 'wp-headlineanimator') . '</h3>'; ?>
+<p><a href="<?php echo get_settings('siteurl').'/'; ?>"><img src="<?php echo get_settings('siteurl').'/'.$wpc_target; ?>.gif" alt="Headline Animator" /></a></p>
+
+<?php } ?>
 </form>
+
+</div>
+
+
