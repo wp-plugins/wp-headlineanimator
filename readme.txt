@@ -93,7 +93,8 @@ Feel free to contact me. I'll extend the FAQ with your questions and provide sup
 == Changes ==
 
 = Version 1.7.0 =
-
+* Localization
+* Refresh admin interface
 
 = Version 1.6 =
 * Corrected PHP short-tag settings issue
