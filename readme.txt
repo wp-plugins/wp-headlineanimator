@@ -90,7 +90,7 @@ Feel free to contact me. I'll extend the FAQ with your questions and provide sup
 * no error handler on if output file is not writeable
 
 
-== Changes ==
+== Changelog ==
 
 = Version 1.7.0 =
 * Localization
