@@ -41,7 +41,7 @@ echo '<h3>' . __('Settings', 'wp-headlineanimator') . '</h3>';
 <form name="wpc-settings" action="" method="post">
 <table cellspacing="2" cellpadding="5" class="editform" summary="WP-BlackCheck Settings" border="0">
 	<tr height="30px">
-		<td colspan="3"><strong><?php _e('Image Settings:', 'wp-blackcheck'); ?></strong></td>
+		<td colspan="3"><strong><?php _e('Image Settings:', 'wp-headlineanimator'); ?></strong></td>
 	</tr>
 	<tr>
 		<td><?php if ( !file_exists( ABSPATH.'/'.get_option('wpc_image')) ) echo '<font color="#ff0000">'; ?><?php  _e('Background image:', 'wp-headlineanimator'); ?><?php if ( !file_exists( ABSPATH.'/'.get_option('wpc_image') ) ) echo '</font>'; ?></td>
@@ -57,10 +57,10 @@ echo '<h3>' . __('Settings', 'wp-headlineanimator') . '</h3>';
 		<td><input name="wpc_font" type="text" size="100" value="<?php echo $wpc_font; ?>" /></td>
 	</tr>
 	<tr>
-		<td colspan="3"><small><?php echo sprintf ( __('If your TTF file is in the same directory as this plugin, I am expecting %s here.', 'wp-blackcheck'), ABSPATH .str_replace(basename( __FILE__),"",plugin_basename(__FILE__)) . 'myfont.ttf' ) ?><small></td>
+		<td colspan="3"><small><?php echo sprintf ( __('If your TTF file is in the same directory as this plugin, I am expecting it here: %s', 'wp-headlineanimator'), ABSPATH .str_replace(basename( __FILE__),"",plugin_basename(__FILE__)) . 'myfont.ttf' ) ?><small></td>
 	</tr>
 	<tr height="30px">
-		<td colspan="3"><strong><?php _e('Storage Settings:', 'wp-blackcheck'); ?></strong></td>
+		<td colspan="3"><strong><?php _e('Storage Settings:', 'wp-headlineanimator'); ?></strong></td>
 	</tr>
 	<tr>
 		<td><?php  _e('Filename of the HeadlineAnimator:', 'wp-headlineanimator'); ?></td>
@@ -99,7 +99,7 @@ echo '<h3>' . __('Settings', 'wp-headlineanimator') . '</h3>';
 	</tr>
 <?php } ?>
 	<tr height="30px">
-		<td colspan="3"><strong><?php _e('Design Settings:', 'wp-blackcheck'); ?></strong></td>
+		<td colspan="3"><strong><?php _e('Design Settings:', 'wp-headlineanimator'); ?></strong></td>
 	</tr>
 	<tr>
 		<td><?php  _e('Text on Picture:', 'wp-headlineanimator'); ?></td>
@@ -141,7 +141,7 @@ echo '<h3>' . __('Settings', 'wp-headlineanimator') . '</h3>';
 		<td><input name="wpc_dateformat" type="text" size="40" value="<?php echo $wpc_dateformat; ?>" /></td>
 	</tr>
 	<tr height="30px">
-		<td colspan="3"><small><?php  echo sprintf ( __('see php manual for <a href="%s" target="_blank">date()</a>.', 'wp-blackcheck'), 'http://www.php.net/date' ); ?></small></td>
+		<td colspan="3"><small><?php  echo sprintf ( __('see php manual for <a href="%s" target="_blank">date()</a>.', 'wp-headlineanimator'), 'http://www.php.net/date' ); ?></small></td>
 	</tr>
 <?php } ?> 
 	<tr>
