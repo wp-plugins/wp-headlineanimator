@@ -1,7 +1,7 @@
 === WP-HeadlineAnimator ===
 Contributors: Stargazer
 Donate link: http://my.stargazer.at/wishlist/
-Tags: post, image, signature
+Tags: post,image,signature
 Requires at least: 3.0
 Tested up to: latest svn
 Stable tag: trunk
@@ -11,9 +11,7 @@ WP-Headlineanimator generates an animated GIF File to be displayed in signatures
 or wherever you like to advertise for your Blog.
 
 == Description ==
- WP-Headlineanimator is a Plugin for Wordpress. It generates an animated
- GIF File to be displayed in signatures or wherever you like to advertise
- for your Blog.
+WP-Headlineanimator is a Plugin for Wordpress. It generates an animated GIF File to be displayed in signatures or wherever you like to advertise for your Blog.
 
 Notice:
 New version format uses 3 digits:  Major.Minor.Patch
