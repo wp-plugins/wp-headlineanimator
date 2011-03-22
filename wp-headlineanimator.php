@@ -2,13 +2,13 @@
 /**
  * @package WP-HeadlineAnimator
  * @author Christoph "Stargazer" Bauer
- * @version 2.0.0
+ * @version 1.7.0
  */
 /*
  Plugin Name: WP-HeadlineAnimator
  Plugin URI: http://www.stargazer.at/projekte
  Description: Generates a graphic like the FB Headline Animator. More info in my blog posts on my.stargazer.at...
- Version: 1.6
+ Version: 1.7
  Author: Christoph "Stargazer" Bauer
  Author URI: http://my.stargazer.at/
  
