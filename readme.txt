@@ -95,12 +95,10 @@ Feel free to contact me. I'll extend the FAQ with your questions and provide sup
 
 == Changelog ==
 
-= Version 1.7.2 =
-* Added Link to Bugtracker / Blog
-
 = Version 1.7.1 =
 * Bugfix push for getting Turkish translation published
 * Add GPL Header to adminpanel
+* Added Link to Bugtracker / Blog
 
 = Version 1.7.0 =
 * Localization
