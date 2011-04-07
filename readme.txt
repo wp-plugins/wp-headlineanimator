@@ -31,6 +31,11 @@ If only the patch number changes, it was a pure bugfix release.
 * The gif image is updated everytime you WRITE, DELETE or MODIFY a post.
 * The Plugin is qTranslate-Compatible (this is a plugin for multilingual blogs)
 
+This plugin is already translated to:
+* English
+* German
+* Turkish (thanks to MysD)
+
 == Installation ==
 1. Upload the contents of the wp-headlineanimator directory into your wordpress plugin directory.
 2. make sure that the file you want to write your animator to is writeable for php
