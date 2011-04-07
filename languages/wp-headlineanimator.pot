@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WP-HeadlineAnimator package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP-HeadlineAnimator 1.7\n"
+"Project-Id-Version: WP-HeadlineAnimator 1.7.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-headlineanimator\n"
-"POT-Creation-Date: 2011-03-22 16:54:07+00:00\n"
+"POT-Creation-Date: 2011-04-07 13:45:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,150 +12,8 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: adminpanel.php:26 wp-headlineanimator.php:169 wp-headlineanimator.php:175
+#: wp-headlineanimator.php:169 wp-headlineanimator.php:175 adminpanel.php:48
 msgid "Error"
-msgstr ""
-
-#: adminpanel.php:26
-msgid "You have no GIF Support in your GDLib. This Plugin will not work!"
-msgstr ""
-
-#: adminpanel.php:34
-msgid "WP-HeadlineAnimator - Settings"
-msgstr ""
-
-#: adminpanel.php:36
-msgid "Settings updated."
-msgstr ""
-
-#: adminpanel.php:38
-msgid "Settings"
-msgstr ""
-
-#: adminpanel.php:44
-msgid "Image Settings:"
-msgstr ""
-
-#: adminpanel.php:47
-msgid "Background image:"
-msgstr ""
-
-#: adminpanel.php:52 adminpanel.php:71
-msgid "(relative to your WP install)"
-msgstr ""
-
-#: adminpanel.php:55
-msgid "Font file:"
-msgstr ""
-
-#: adminpanel.php:60
-msgid ""
-"If your TTF file is in the same directory as this plugin, I am expecting it "
-"here: %s"
-msgstr ""
-
-#: adminpanel.php:63
-msgid "Storage Settings:"
-msgstr ""
-
-#: adminpanel.php:66
-msgid "Filename of the HeadlineAnimator:"
-msgstr ""
-
-#: adminpanel.php:74
-msgid "Store animator on remote FTP Server"
-msgstr ""
-
-#: adminpanel.php:78
-msgid "Remote FTP Host:"
-msgstr ""
-
-#: adminpanel.php:83
-msgid "FTP User:"
-msgstr ""
-
-#: adminpanel.php:88
-msgid "FTP Password:"
-msgstr ""
-
-#: adminpanel.php:93
-msgid "FTP path and target:"
-msgstr ""
-
-#: adminpanel.php:98
-msgid "(remote path starting with \"/\")"
-msgstr ""
-
-#: adminpanel.php:102
-msgid "Design Settings:"
-msgstr ""
-
-#: adminpanel.php:105
-msgid "Text on Picture:"
-msgstr ""
-
-#: adminpanel.php:110
-msgid "Text color:"
-msgstr ""
-
-#: adminpanel.php:115
-msgid "(HTML Notation like #740204)"
-msgstr ""
-
-#: adminpanel.php:118
-msgid "Text size:"
-msgstr ""
-
-#: adminpanel.php:123
-msgid "Newstext size:"
-msgstr ""
-
-#: adminpanel.php:129
-msgid "Advanced Configuration"
-msgstr ""
-
-#: adminpanel.php:134
-msgid "Show date on animator"
-msgstr ""
-
-#: adminpanel.php:139
-msgid "Date format:"
-msgstr ""
-
-#: adminpanel.php:144
-msgid "see php manual for <a href=\"%s\" target=\"_blank\">date()</a>."
-msgstr ""
-
-#: adminpanel.php:148
-msgid "Headlines to display:"
-msgstr ""
-
-#: adminpanel.php:153
-msgid "Headline display time (milliseconds):"
-msgstr ""
-
-#: adminpanel.php:158
-msgid "Delay between headlines (milliseconds):"
-msgstr ""
-
-#: adminpanel.php:166
-msgid "Update Settings"
-msgstr ""
-
-#: adminpanel.php:172 adminpanel.php:174
-msgid "Integration"
-msgstr ""
-
-#: adminpanel.php:176
-msgid "HTML Code for your Animator:"
-msgstr ""
-
-#: adminpanel.php:182
-msgid "bbCode for your Animator:"
-msgstr ""
-
-#: adminpanel.php:189
-msgid "Preview"
 msgstr ""
 
 #: wp-headlineanimator.php:169
@@ -164,4 +22,185 @@ msgstr ""
 
 #: wp-headlineanimator.php:175
 msgid "FTP upload has failed!"
+msgstr ""
+
+#: adminpanel.php:48
+msgid "You have no GIF Support in your GDLib. This Plugin will not work!"
+msgstr ""
+
+#: adminpanel.php:56
+msgid "WP-HeadlineAnimator - Settings"
+msgstr ""
+
+#: adminpanel.php:58
+msgid ""
+"Welcome to the settings page for WP-HeadlineAnimator. You are able to "
+"configure the plugin to your needs. "
+msgstr ""
+
+#: adminpanel.php:59
+msgid ""
+"For more information visit <a href=\"%s\" target=\"_blank\">this page</a>."
+msgstr ""
+
+#: adminpanel.php:60
+msgid ""
+"If you found a bug, please report it at <a href=\"%s\" target=\"_blank"
+"\">this page</a>."
+msgstr ""
+
+#: adminpanel.php:62
+msgid "Settings updated."
+msgstr ""
+
+#: adminpanel.php:64
+msgid "Settings"
+msgstr ""
+
+#: adminpanel.php:70
+msgid "Image Settings:"
+msgstr ""
+
+#: adminpanel.php:73
+msgid "Background image:"
+msgstr ""
+
+#: adminpanel.php:78 adminpanel.php:97
+msgid "(relative to your WP install)"
+msgstr ""
+
+#: adminpanel.php:81
+msgid "Font file:"
+msgstr ""
+
+#: adminpanel.php:86
+msgid ""
+"If your TTF file is in the same directory as this plugin, I am expecting it "
+"here: %s"
+msgstr ""
+
+#: adminpanel.php:89
+msgid "Storage Settings:"
+msgstr ""
+
+#: adminpanel.php:92
+msgid "Filename of the HeadlineAnimator:"
+msgstr ""
+
+#: adminpanel.php:100
+msgid "Store animator on remote FTP Server"
+msgstr ""
+
+#: adminpanel.php:104
+msgid "Remote FTP Host:"
+msgstr ""
+
+#: adminpanel.php:109
+msgid "FTP User:"
+msgstr ""
+
+#: adminpanel.php:114
+msgid "FTP Password:"
+msgstr ""
+
+#: adminpanel.php:119
+msgid "FTP path and target:"
+msgstr ""
+
+#: adminpanel.php:124
+msgid "(remote path starting with \"/\")"
+msgstr ""
+
+#: adminpanel.php:128
+msgid "Design Settings:"
+msgstr ""
+
+#: adminpanel.php:131
+msgid "Text on Picture:"
+msgstr ""
+
+#: adminpanel.php:136
+msgid "Text color:"
+msgstr ""
+
+#: adminpanel.php:141
+msgid "(HTML Notation like #740204)"
+msgstr ""
+
+#: adminpanel.php:144
+msgid "Text size:"
+msgstr ""
+
+#: adminpanel.php:149
+msgid "Newstext size:"
+msgstr ""
+
+#: adminpanel.php:155
+msgid "Advanced Configuration"
+msgstr ""
+
+#: adminpanel.php:160
+msgid "Show date on animator"
+msgstr ""
+
+#: adminpanel.php:165
+msgid "Date format:"
+msgstr ""
+
+#: adminpanel.php:170
+msgid "see php manual for <a href=\"%s\" target=\"_blank\">date()</a>."
+msgstr ""
+
+#: adminpanel.php:174
+msgid "Headlines to display:"
+msgstr ""
+
+#: adminpanel.php:179
+msgid "Headline display time (milliseconds):"
+msgstr ""
+
+#: adminpanel.php:184
+msgid "Delay between headlines (milliseconds):"
+msgstr ""
+
+#: adminpanel.php:192
+msgid "Update Settings"
+msgstr ""
+
+#: adminpanel.php:198 adminpanel.php:200
+msgid "Integration"
+msgstr ""
+
+#: adminpanel.php:202
+msgid "HTML Code for your Animator:"
+msgstr ""
+
+#: adminpanel.php:208
+msgid "bbCode for your Animator:"
+msgstr ""
+
+#: adminpanel.php:215
+msgid "Preview"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP-HeadlineAnimator"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.stargazer.at/projekte"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Generates a graphic like the FB Headline Animator. More info in my blog "
+"posts on my.stargazer.at..."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Christoph \"Stargazer\" Bauer"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://my.stargazer.at/"
 msgstr ""
