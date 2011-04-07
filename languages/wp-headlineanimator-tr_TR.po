@@ -1,0 +1,174 @@
+# Copyright (C) 2010 WP-HeadlineAnimator
+# This file is distributed under the same license as the WP-HeadlineAnimator package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-HeadlineAnimator\n"
+"Report-Msgid-Bugs-To: http://bugs.stargazer.at/\n"
+"POT-Creation-Date: 2011-03-22 16:54:07+00:00\n"
+"PO-Revision-Date: 2011-04-07 14:54+0100\n"
+"Last-Translator: Christoph Bauer <cbauer@stargazer.at>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Poedit-Language: Turkish\n"
+"X-Poedit-Country: TURKEY\n"
+
+#: adminpanel.php:26
+#: wp-headlineanimator.php:169
+#: wp-headlineanimator.php:175
+msgid "Error"
+msgstr "Hata"
+
+#: adminpanel.php:26
+msgid "You have no GIF Support in your GDLib. This Plugin will not work!"
+msgstr "GDLib için GIF desteği yok. Bu Plugin çalışmayacaktır!"
+
+#: adminpanel.php:34
+msgid "WP-HeadlineAnimator - Settings"
+msgstr "WP-HeadlineAnimator - Ayarları"
+
+#: adminpanel.php:36
+msgid "Settings updated."
+msgstr "Ayarlar güncellendi."
+
+#: adminpanel.php:38
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: adminpanel.php:44
+msgid "Image Settings:"
+msgstr "Görüntü Ayarları:"
+
+#: adminpanel.php:47
+msgid "Background image:"
+msgstr "Arka plan görüntüsü:"
+
+#: adminpanel.php:52
+#: adminpanel.php:71
+msgid "(relative to your WP install)"
+msgstr "(WP yüklemek için ilgili)"
+
+#: adminpanel.php:55
+msgid "Font file:"
+msgstr "Yazı tipi dosyası:"
+
+#: adminpanel.php:60
+msgid "If your TTF file is in the same directory as this plugin, I am expecting it here: %s"
+msgstr "%s : Bu eklenti TTF dosyası ile aynı dizinde ise, burada bekle"
+
+#: adminpanel.php:63
+msgid "Storage Settings:"
+msgstr "Depolama Ayarları:"
+
+#: adminpanel.php:66
+msgid "Filename of the HeadlineAnimator:"
+msgstr "HeadlineAnimator Dosya Adı:"
+
+#: adminpanel.php:74
+msgid "Store animator on remote FTP Server"
+msgstr "Uzak FTP Sunucu üzerindeki animatör deposu"
+
+#: adminpanel.php:78
+msgid "Remote FTP Host:"
+msgstr "Uzaktaki FTP Host:"
+
+#: adminpanel.php:83
+msgid "FTP User:"
+msgstr "FTP Kullanıcısı:"
+
+#: adminpanel.php:88
+msgid "FTP Password:"
+msgstr "FTP Şifresi:"
+
+#: adminpanel.php:93
+msgid "FTP path and target:"
+msgstr "FTP yolu ve hedefi:"
+
+#: adminpanel.php:98
+msgid "(remote path starting with \"/\")"
+msgstr "(\"/\" ile başlayan uzak yol)"
+
+#: adminpanel.php:102
+msgid "Design Settings:"
+msgstr "Tasarım Ayarları:"
+
+#: adminpanel.php:105
+msgid "Text on Picture:"
+msgstr "Resm Metini:"
+
+#: adminpanel.php:110
+msgid "Text color:"
+msgstr "Metin rengi:"
+
+#: adminpanel.php:115
+msgid "(HTML Notation like #740204)"
+msgstr "(#740204 HTML Gösterimi gibi)"
+
+#: adminpanel.php:118
+msgid "Text size:"
+msgstr "Metin boyutu:"
+
+#: adminpanel.php:123
+msgid "Newstext size:"
+msgstr "Yeni metin boyutu:"
+
+#: adminpanel.php:129
+msgid "Advanced Configuration"
+msgstr "Gelişmiş Yapılandırma"
+
+#: adminpanel.php:134
+msgid "Show date on animator"
+msgstr "Animatör tarihini göster"
+
+#: adminpanel.php:139
+msgid "Date format:"
+msgstr "Tarih formatı:"
+
+#: adminpanel.php:144
+msgid "see php manual for <a href=\"%s\" target=\"_blank\">date()</a>."
+msgstr "<a href=\"%s\" target=\"_blank\">date()</a> için php kılavuzuna bakın."
+
+#: adminpanel.php:148
+msgid "Headlines to display:"
+msgstr "Başlıkları görüntüle:"
+
+#: adminpanel.php:153
+msgid "Headline display time (milliseconds):"
+msgstr "Başlık görüntüleme süresi (milisaniye):"
+
+#: adminpanel.php:158
+msgid "Delay between headlines (milliseconds):"
+msgstr "Başlıklar arasındaki gecikme (milisaniye):"
+
+#: adminpanel.php:166
+msgid "Update Settings"
+msgstr "Güncelleme Ayarları"
+
+#: adminpanel.php:172
+#: adminpanel.php:174
+msgid "Integration"
+msgstr "Birleştirme"
+
+#: adminpanel.php:176
+msgid "HTML Code for your Animator:"
+msgstr "Animator için HTML Kodun:"
+
+#: adminpanel.php:182
+msgid "bbCode for your Animator:"
+msgstr "Animator için BB Kodun:"
+
+#: adminpanel.php:189
+msgid "Preview"
+msgstr "Önizleme"
+
+#: wp-headlineanimator.php:169
+msgid "FTP connection has failed! Check Hostname and Login!"
+msgstr "FTP bağlantısı sağlanamadı! Ana Bilgisayar Adını ve girişi kontrol edin!"
+
+#: wp-headlineanimator.php:175
+msgid "FTP upload has failed!"
+msgstr "FTP yüklemesi başarısız olmuştur!"
+
