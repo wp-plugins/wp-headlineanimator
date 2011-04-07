@@ -61,7 +61,7 @@ echo '<h3>' . __('Settings', 'wp-headlineanimator') . '</h3>';
 ?>
 
 <form name="wpc-settings" action="" method="post">
-<table cellspacing="2" cellpadding="5" class="editform" summary="WP-BlackCheck Settings" border="0">
+<table cellspacing="2" cellpadding="5" class="editform" summary="WP-HeadlineAnimator Settings" border="0">
 	<tr height="30px">
 		<td colspan="3"><strong><?php _e('Image Settings:', 'wp-headlineanimator'); ?></strong></td>
 	</tr>
