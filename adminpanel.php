@@ -2,7 +2,7 @@
 /**
  * @package WP-HeadlineAnimator-Admin
  * @author Christoph "Stargazer" Bauer
- * @version 1.7.1
+ * @version 1.7.2
  */
 /*
  * Function library used with WP-BlackCheck
@@ -54,6 +54,10 @@ if ( !function_exists('imagegif') ) {
 <div class="wrap">
 <?php
 echo '<h2>' . __('WP-HeadlineAnimator - Settings', 'wp-headlineanimator') . '</h2>';
+
+echo '<p>' . __('Welcome to the settings page for WP-HeadlineAnimator. You are able to configure the plugin to your needs. ', 'wp-headlineanimator') . '<br />';
+echo sprintf ( __('For more information visit <a href="%s" target="_blank">this page</a>.', 'wp-headlineanimator'), 'http://my.stargazer.at/tag/wp-headlineanimator/' ) . ' ';
+echo sprintf ( __('If you found a bug, please report it at <a href="%s" target="_blank">this page</a>.', 'wp-headlineanimator'), 'http://bugs.stargazer.at/' ) . '</p>';
 
 if(isset($_POST['submitted'])) echo '<div style="border:1px outset gray; margin:.5em; padding:.5em; background-color:#efd;">' . __('Settings updated.', 'wp-headlineanimator') . '</div>';
 
