@@ -1,4 +1,26 @@
 <?php
+/**
+ * @package WP-HeadlineAnimator-Admin
+ * @author Christoph "Stargazer" Bauer
+ * @version 1.7.1
+ */
+/*
+ * Function library used with WP-BlackCheck
+ *
+ * Copyright 2010 Christoph Bauer  (email : cbauer@stargazer.at)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2, as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ */
+
+
 // Securing against direct calls
 if (!defined('ABSPATH')) die("Called directly. Taking the emergency exit.");
 
@@ -21,7 +43,7 @@ if (!defined('ABSPATH')) die("Called directly. Taking the emergency exit.");
   $wpc_ftp_pass		= get_option('wpc_ftp_pass');
   $wpc_ftp_path		= get_option('wpc_ftp_path');
   $wpc_ftp_target	= get_option('wpc_ftp_target');
-		
+
 if ( !function_exists('imagegif') ) {
 	echo '<div class="wrap"><h2>' . __('Error', 'wp-headlineanimator') . '!</h2><h3><font color="red">' . __('You have no GIF Support in your GDLib. This Plugin will not work!', 'wp-headlineanimator') . '</font></h3></div>';;
 }
@@ -129,7 +151,7 @@ echo '<h3>' . __('Settings', 'wp-headlineanimator') . '</h3>';
 		<td colspan="3"> <input name="wpc_mode" type="checkbox" value="on" <?php if($wpc_mode == 'on') { echo "checked=\"checked\""; } ?> /> <?php  _e('Advanced Configuration', 'wp-headlineanimator'); ?></td>
 	</tr>
 
-	
+
 	<tr>
 		<td colspan="3"><input name="wpc_wantdate" type="checkbox" value="on" <?php if($wpc_wantdate == 'on') { echo "checked=\"checked\""; } ?> /> <?php  _e('Show date on animator', 'wp-headlineanimator'); ?></td>
 	</tr>
@@ -143,7 +165,7 @@ echo '<h3>' . __('Settings', 'wp-headlineanimator') . '</h3>';
 	<tr height="30px">
 		<td colspan="3"><small><?php  echo sprintf ( __('see php manual for <a href="%s" target="_blank">date()</a>.', 'wp-headlineanimator'), 'http://www.php.net/date' ); ?></small></td>
 	</tr>
-<?php } ?> 
+<?php } ?>
 	<tr>
 		<td><?php  _e('Headlines to display:', 'wp-headlineanimator'); ?></td>
 		<td>&nbsp;</td>

@@ -2,7 +2,7 @@
 /**
  * @package WP-HeadlineAnimator
  * @author Christoph "Stargazer" Bauer
- * @version 1.7.0
+ * @version 1.7.1
  */
 /*
  Plugin Name: WP-HeadlineAnimator
