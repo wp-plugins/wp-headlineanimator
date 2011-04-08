@@ -31,7 +31,7 @@ If only the patch number changes, it was a pure bugfix release.
 * The gif image is updated everytime you WRITE, DELETE or MODIFY a post.
 * The Plugin is qTranslate-Compatible (this is a plugin for multilingual blogs)
 
-This plugin is already translated to:
+== This plugin is already translated to ==
 * English
 * German
 * Turkish (thanks to MysD)
