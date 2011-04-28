@@ -5,34 +5,35 @@ msgstr ""
 "Project-Id-Version: WP-HeadlineAnimator\n"
 "Report-Msgid-Bugs-To: http://bugs.stargazer.at/\n"
 "POT-Creation-Date: 2011-04-07 13:45:46+00:00\n"
-"PO-Revision-Date: 2011-04-28 08:54+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-04-11 11:30+0000\n"
+"Last-Translator: kara <muhammet.k@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr_TR\n"
+"Language: tr\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
 #: wp-headlineanimator.php:169 wp-headlineanimator.php:175 adminpanel.php:48
 msgid "Error"
-msgstr ""
+msgstr "Hata"
 
 #: wp-headlineanimator.php:169
 msgid "FTP connection has failed! Check Hostname and Login!"
 msgstr ""
+"FTP bağlantısı sağlanamadı! Ana Bilgisayar Adını ve girişi kontrol edin!"
 
 #: wp-headlineanimator.php:175
 msgid "FTP upload has failed!"
-msgstr ""
+msgstr "FTP yüklemesi başarısız olmuştur!"
 
 #: adminpanel.php:48
 msgid "You have no GIF Support in your GDLib. This Plugin will not work!"
-msgstr ""
+msgstr "GDLib için GIF desteği yok. Bu Plugin çalışmayacaktır!"
 
 #: adminpanel.php:56
 msgid "WP-HeadlineAnimator - Settings"
-msgstr ""
+msgstr "WP-HeadlineAnimator - Ayarları"
 
 #: adminpanel.php:58
 msgid ""
@@ -52,145 +53,145 @@ msgstr ""
 
 #: adminpanel.php:62
 msgid "Settings updated."
-msgstr ""
+msgstr "Ayarlar güncellendi."
 
 #: adminpanel.php:64
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar"
 
 #: adminpanel.php:70
 msgid "Image Settings:"
-msgstr ""
+msgstr "Görüntü Ayarları:"
 
 #: adminpanel.php:73
 msgid "Background image:"
-msgstr ""
+msgstr "Arka plan görüntüsü:"
 
 #: adminpanel.php:78 adminpanel.php:97
 msgid "(relative to your WP install)"
-msgstr ""
+msgstr "(WP yüklemek için ilgili)"
 
 #: adminpanel.php:81
 msgid "Font file:"
-msgstr ""
+msgstr "Yazı tipi dosyası:"
 
 #: adminpanel.php:86
 msgid ""
 "If your TTF file is in the same directory as this plugin, I am expecting it "
 "here: %s"
-msgstr ""
+msgstr "%s : Bu eklenti TTF dosyası ile aynı dizinde ise, burada bekle"
 
 #: adminpanel.php:89
 msgid "Storage Settings:"
-msgstr ""
+msgstr "Depolama Ayarları:"
 
 #: adminpanel.php:92
 msgid "Filename of the HeadlineAnimator:"
-msgstr ""
+msgstr "HeadlineAnimator Dosya Adı:"
 
 #: adminpanel.php:100
 msgid "Store animator on remote FTP Server"
-msgstr ""
+msgstr "Uzak FTP Sunucu üzerindeki animatör deposu"
 
 #: adminpanel.php:104
 msgid "Remote FTP Host:"
-msgstr ""
+msgstr "Uzaktaki FTP Host:"
 
 #: adminpanel.php:109
 msgid "FTP User:"
-msgstr ""
+msgstr "FTP Kullanıcısı:"
 
 #: adminpanel.php:114
 msgid "FTP Password:"
-msgstr ""
+msgstr "FTP Şifresi:"
 
 #: adminpanel.php:119
 msgid "FTP path and target:"
-msgstr ""
+msgstr "FTP yolu ve hedefi:"
 
 #: adminpanel.php:124
 msgid "(remote path starting with \"/\")"
-msgstr ""
+msgstr "(\"/\" ile başlayan uzak yol)"
 
 #: adminpanel.php:128
 msgid "Design Settings:"
-msgstr ""
+msgstr "Tasarım Ayarları:"
 
 #: adminpanel.php:131
 msgid "Text on Picture:"
-msgstr ""
+msgstr "Resm Metini:"
 
 #: adminpanel.php:136
 msgid "Text color:"
-msgstr ""
+msgstr "Metin rengi:"
 
 #: adminpanel.php:141
 msgid "(HTML Notation like #740204)"
-msgstr ""
+msgstr "(#740204 HTML Gösterimi gibi)"
 
 #: adminpanel.php:144
 msgid "Text size:"
-msgstr ""
+msgstr "Metin boyutu:"
 
 #: adminpanel.php:149
 msgid "Newstext size:"
-msgstr ""
+msgstr "Yeni metin boyutu:"
 
 #: adminpanel.php:155
 msgid "Advanced Configuration"
-msgstr ""
+msgstr "Gelişmiş Yapılandırma"
 
 #: adminpanel.php:160
 msgid "Show date on animator"
-msgstr ""
+msgstr "Animatör tarihini göster"
 
 #: adminpanel.php:165
 msgid "Date format:"
-msgstr ""
+msgstr "Tarih formatı:"
 
 #: adminpanel.php:170
 msgid "see php manual for <a href=\"%s\" target=\"_blank\">date()</a>."
-msgstr ""
+msgstr "<a href=\"%s\" target=\"_blank\">date()</a> için php kılavuzuna bakın."
 
 #: adminpanel.php:174
 msgid "Headlines to display:"
-msgstr ""
+msgstr "Başlıkları görüntüle:"
 
 #: adminpanel.php:179
 msgid "Headline display time (milliseconds):"
-msgstr ""
+msgstr "Başlık görüntüleme süresi (milisaniye):"
 
 #: adminpanel.php:184
 msgid "Delay between headlines (milliseconds):"
-msgstr ""
+msgstr "Başlıklar arasındaki gecikme (milisaniye):"
 
 #: adminpanel.php:192
 msgid "Update Settings"
-msgstr ""
+msgstr "Güncelleme Ayarları"
 
 #: adminpanel.php:198 adminpanel.php:200
 msgid "Integration"
-msgstr ""
+msgstr "Birleştirme"
 
 #: adminpanel.php:202
 msgid "HTML Code for your Animator:"
-msgstr ""
+msgstr "Animator için HTML Kodun:"
 
 #: adminpanel.php:208
 msgid "bbCode for your Animator:"
-msgstr ""
+msgstr "Animator için BB Kodun:"
 
 #: adminpanel.php:215
 msgid "Preview"
-msgstr ""
+msgstr "Önizleme"
 
 #. Plugin Name of the plugin/theme
 msgid "WP-HeadlineAnimator"
-msgstr ""
+msgstr "WP-HeadlineAnimator"
 
 #. Plugin URI of the plugin/theme
 msgid "http://www.stargazer.at/projekte"
-msgstr ""
+msgstr "http://www.stargazer.at/projekte"
 
 #. Description of the plugin/theme
 msgid ""
@@ -200,8 +201,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Christoph \"Stargazer\" Bauer"
-msgstr ""
+msgstr "Christoph \"Stargazer\" Bauer"
 
 #. Author URI of the plugin/theme
 msgid "http://my.stargazer.at/"
-msgstr ""
+msgstr "http://my.stargazer.at/"

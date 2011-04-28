@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-HeadlineAnimator 1.7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-04-07 15:24+0100\n"
+"PO-Revision-Date: 2011-04-07 15:25+0100\n"
+"Last-Translator: Christoph Bauer <cbauer@stargazer.at>\n"
+"Language-Team: TRANSLATORS <wordpress@stargazer.at>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _n;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator\n"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/wp-headlineanimator.php:169
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/wp-headlineanimator.php:175
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:48
+msgid "Error"
+msgstr "Fehler"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/wp-headlineanimator.php:169
+msgid "FTP connection has failed! Check Hostname and Login!"
+msgstr "FTP Verbindung fehlgeschlagen! Bitte Servernamen und Logindaten überprüfen!"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/wp-headlineanimator.php:175
+msgid "FTP upload has failed!"
+msgstr "Hochladen der Dateien schlug fehl!"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:48
+msgid "You have no GIF Support in your GDLib. This Plugin will not work!"
+msgstr "Du hast keine Unterstützung für GIF Dateien in deiner GDLib. Dieses Plugin kann dadurch nicht korrekt arbeiten!"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:56
+msgid "WP-HeadlineAnimator - Settings"
+msgstr "WP-HeadlineAnimator - Einstellungen"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:58
+msgid "Welcome to the settings page for WP-HeadlineAnimator. You are able to configure the plugin to your needs. "
+msgstr "Willkommen auf der Seite für die Einstellungen des WP-HeadlineAnimators. Hier lässt sich das Verhalten des Plugins auf deine Bedürfnisse anpassen."
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:59
+#, php-format
+msgid "For more information visit <a href=\"%s\" target=\"_blank\">this page</a>."
+msgstr "Mehr Informationen erhälst du auf <a href=\"%s\" target=\"_blank\">dieser Seite</a>."
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:60
+#, php-format
+msgid "If you found a bug, please report it at <a href=\"%s\" target=\"_blank\">this page</a>."
+msgstr "Wenn du einen Fehler gefunden hast, bitte melde ihn auf <a href=\"%s\" target=\"_blank\">dieser Seite</a>."
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:62
+msgid "Settings updated."
+msgstr "Einstellungen aktualisiert."
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:64
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:70
+msgid "Image Settings:"
+msgstr "Bild-Einstellungen:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:73
+msgid "Background image:"
+msgstr "Hintergrundbild:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:78
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:97
+msgid "(relative to your WP install)"
+msgstr "(relativ zu deiner WP-Installation)"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:81
+msgid "Font file:"
+msgstr "Schriften-Datei:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:86
+#, php-format
+msgid "If your TTF file is in the same directory as this plugin, I am expecting it here: %s"
+msgstr "Wenn sich deine Schriften-Datei im selben Ordner wie dieses Plugin befindet, erwarte ich sie unter %s."
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:89
+msgid "Storage Settings:"
+msgstr "Speicher-Einstellungen:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:92
+msgid "Filename of the HeadlineAnimator:"
+msgstr "Dateinamen des HeadlineAnimators:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:100
+msgid "Store animator on remote FTP Server"
+msgstr "Den Animator auf einem FTP Server ablegen"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:104
+msgid "Remote FTP Host:"
+msgstr "FTP-Server:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:109
+msgid "FTP User:"
+msgstr "Benutzername:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:114
+msgid "FTP Password:"
+msgstr "Passwort:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:119
+msgid "FTP path and target:"
+msgstr "Pfad und Ziel:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:124
+msgid "(remote path starting with \"/\")"
+msgstr "(Der Pfad muss mit \"/\" beginnen)"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:128
+msgid "Design Settings:"
+msgstr "Design-Einstellungen:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:131
+msgid "Text on Picture:"
+msgstr "Text am Bild:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:136
+msgid "Text color:"
+msgstr "Textfarbe:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:141
+msgid "(HTML Notation like #740204)"
+msgstr "(HTML Notation wie z.B. #740204)"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:144
+msgid "Text size:"
+msgstr "Schriftgröße:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:149
+msgid "Newstext size:"
+msgstr "Schriftgröße der Nachrichten:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:155
+msgid "Advanced Configuration"
+msgstr "Erweiterte Einstellungen"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:160
+msgid "Show date on animator"
+msgstr "Zeige Datum in der Grafik"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:165
+msgid "Date format:"
+msgstr "Datumsformat:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:170
+#, php-format
+msgid "see php manual for <a href=\"%s\" target=\"_blank\">date()</a>."
+msgstr "siehe php-Dokumentation zu <a href=\"%s\" target=\"_blank\">date()</a>."
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:174
+msgid "Headlines to display:"
+msgstr "anzuzeigende Überschriften:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:179
+msgid "Headline display time (milliseconds):"
+msgstr "Zeit die eine Nachricht angezeigt werden soll (Millisekunden):"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:184
+msgid "Delay between headlines (milliseconds):"
+msgstr "Abstand zwischen den Überschriften (Millisekunden):"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:192
+msgid "Update Settings"
+msgstr "Einstellungen aktualisieren"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:198
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:200
+msgid "Integration"
+msgstr "Einbindung"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:202
+msgid "HTML Code for your Animator:"
+msgstr "HTML-Code zur Einbindung des Animators:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:208
+msgid "bbCode for your Animator:"
+msgstr "bbCode zur Einbindung des Animators:"
+
+#: /home/cbauer/work/Projects/Wordpress/wp-headlineanimator/adminpanel.php:215
+msgid "Preview"
+msgstr "Vorschau"
+
