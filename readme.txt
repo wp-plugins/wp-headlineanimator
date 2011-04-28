@@ -2,7 +2,7 @@
 Contributors: Stargazer
 Donate link: http://my.stargazer.at/wishlist/
 Tags: post,image,signature
-Requires at least: 2.8
+Requires at least: 2.9
 Tested up to: latest svn
 Stable tag: trunk
 
