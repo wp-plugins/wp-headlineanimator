@@ -2,7 +2,7 @@
 Contributors: Stargazer
 Donate link: http://my.stargazer.at/wishlist/
 Tags: post,image,signature
-Requires at least: 3.0
+Requires at least: 2.8
 Tested up to: latest svn
 Stable tag: trunk
 
@@ -13,28 +13,31 @@ or wherever you like to advertise for your Blog.
 == Description ==
 WP-Headlineanimator is a Plugin for Wordpress. It generates an animated GIF File to be displayed in signatures or wherever you like to advertise for your Blog.
 
-Notice:
-New version format uses 3 digits:  Major.Minor.Patch
-Minor number change indicates that a new feature was introduced
-If only the patch number changes, it was a pure bugfix release.
-
-== Requirements ==
-* Wordpress >= 3.0
+= Requirements =
+* Wordpress >= 2.8
 * some time
 * Access to your webserver
 * A background picture for your signature
 * A Font file (ttf)
 * PHP with GDlib support
 
-== Features ==
+= Features =
 * As a forum signature can be called _very_often_, it is pointless generating the picture from scratch via PHP
 * The gif image is updated everytime you WRITE, DELETE or MODIFY a post.
 * The Plugin is qTranslate-Compatible (this is a plugin for multilingual blogs)
 
-== This plugin is already translated to ==
+= Languages =
 * English
 * German
 * Turkish (thanks to MysD)
+
+If you want to see this plugin in your language, feel free to contact me.
+
+= Links =
+* [Blog](http://my.stargazer.at/ "Authors blog")
+* [Bugtracker](http://bugs.stargazer.at/ "Bugtracker")
+* [Twitter](http://www.twitter.com/my_stargazer_at)
+
 
 == Installation ==
 1. Upload the contents of the wp-headlineanimator directory into your wordpress plugin directory.
