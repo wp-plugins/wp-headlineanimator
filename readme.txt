@@ -14,7 +14,7 @@ or wherever you like to advertise for your Blog.
 WP-Headlineanimator is a Plugin for Wordpress. It generates an animated GIF File to be displayed in signatures or wherever you like to advertise for your Blog.
 
 = Requirements =
-* Wordpress >= 2.8
+* Wordpress >= 2.9
 * some time
 * Access to your webserver
 * A background picture for your signature
@@ -98,28 +98,32 @@ Feel free to contact me. I'll extend the FAQ with your questions and provide sup
 
 == Changelog ==
 
-= Version 1.7.1 =
+= 1.7.2 =
+* Style fix
+* readme updates
+
+= 1.7.1 =
 * Bugfix push for getting Turkish translation published
 * Add GPL Header to adminpanel
 * Added Link to Bugtracker / Blog
 
-= Version 1.7.0 =
+= 1.7.0 =
 * Localization
 * Refresh admin interface
 
-= Version 1.6 =
+= 1.6 =
 * Corrected PHP short-tag settings issue
 * drop support for wp < 3.0
 
-= Version 1.5 =
+= 1.5 =
 * Fixed a typo
 * Changed from Polyglot to qTranslate Support
 
-= Version 1.4 =
+= 1.4 =
 * Timing is now configureable
 * Added FTP Upload option
 
-= Version 1.3 =
+= 1.3 =
 * Font size now customizeable
 * Split off administration to seperate file
 * Introduced simple and advanced configuration
@@ -127,44 +131,44 @@ Feel free to contact me. I'll extend the FAQ with your questions and provide sup
 * Number of headlines to be displayed is now customizeable
 * Seperated display of the animator in the admin panel
 
-= Version 1.2 =
+= 1.2 =
 * Reintroduced Polyglot support as it just did some weird
 * got rid of exif - caused many problems on some systems.
 * added BBCode Line for copy&paste
 * Textcolor is now changeable
 
-= Version 1.1 =
+= 1.1 =
 * Ripped out Polyglot detection as this is already handled by wordpress with get_posts()
 * Added initialisation routine for default options
 * Preview only if file exists
 * Only write file if we got a font and picture
 
-= Version 1.0 =
+= 1.0 =
 * Let's assume I got my wishlist completed on that topic and the code isn't too ugly.
 
-= Version 0.6 =
+= 0.6 =
 * Got rid of tmp path; we just write out our image
 * cleanup
 * picture format support
 
-= Version 0.5 =
+= 0.5 =
 * Upgrade to new GifMerge Class
 * eliminating of direct DB Queries
 * code cleanups
 
-= Version 0.4 =
+= 0.4 =
 * make use of polyglot_filter() for better Polyglot Support -> Multilanguage!!
 * minior design fixes
 
-= Version 0.3 =
+= 0.3 =
 * Use 5 Headlines, generate animated GIF
 * Make use of GifMerge.class.php
 
-= Version 0.2 =
+= 0.2 =
 * Added date() to image and made it optional (thx to pcDummy)
 * Administrative interface
 * Code cleanup
 
-= Version 0.1 =
+= 0.1 =
 * Added basic Support for Polyglot (hack)
 * Initial release
