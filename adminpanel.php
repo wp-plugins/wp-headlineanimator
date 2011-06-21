@@ -2,12 +2,12 @@
 /**
  * @package WP-HeadlineAnimator-Admin
  * @author Christoph "Stargazer" Bauer
- * @version 1.7.2
+ * @version 1.7.3
  */
 /*
  * Function library used with WP-BlackCheck
  *
- * Copyright 2010 Christoph Bauer  (email : cbauer@stargazer.at)
+ * Copyright 2011 Christoph Bauer  (email : cbauer@stargazer.at)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as
@@ -53,7 +53,7 @@ if ( !function_exists('imagegif') ) {
 
 <div class="wrap">
 <?php
-echo '<h2>' . __('WP-HeadlineAnimator - Settings', 'wp-headlineanimator') . '</h2>';
+echo '<div id="icon-options-general" class="icon32"><br /></div><h2>' . __('WP-HeadlineAnimator - Settings', 'wp-headlineanimator') . '</h2>';
 
 echo '<p>' . __('Welcome to the settings page for WP-HeadlineAnimator. You are able to configure the plugin to your needs. ', 'wp-headlineanimator') . '<br />';
 echo sprintf ( __('For more information visit <a href="%s" target="_blank">this page</a>.', 'wp-headlineanimator'), 'http://my.stargazer.at/tag/wp-headlineanimator/' ) . ' ';
