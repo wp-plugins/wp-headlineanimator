@@ -31,8 +31,7 @@ WP-Headlineanimator is a Plugin for Wordpress. It generates an animated GIF File
 * German
 * Turkish (thanks to MysD)
 
-If you want to see this plugin in your language, feel free to contact me or use [transifex.n
-et](https://www.transifex.net/projects/p/wpha/resource/plugin/) to contribute.
+If you want to see this plugin in your language, feel free to contact me or use [transifex.net](https://www.transifex.net/projects/p/wpha/resource/plugin/) to contribute.
 
 = Links =
 * [Blog](http://my.stargazer.at/ "Authors blog")
