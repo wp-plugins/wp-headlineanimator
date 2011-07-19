@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: WP-HeadlineAnimator\n"
 "Report-Msgid-Bugs-To: http://bugs.stargazer.at/\n"
 "POT-Creation-Date: 2011-04-07 13:45:46+00:00\n"
-"PO-Revision-Date: 2011-04-28 08:54+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-07-19 10:21+0000\n"
+"Last-Translator: cb5264 <transifex@stargazer.at>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,192 +16,207 @@ msgstr ""
 
 #: wp-headlineanimator.php:169 wp-headlineanimator.php:175 adminpanel.php:48
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: wp-headlineanimator.php:169
 msgid "FTP connection has failed! Check Hostname and Login!"
 msgstr ""
+"FTP Verbindung fehlgeschlagen! Bitte Servernamen und Logindaten überprüfen!"
 
 #: wp-headlineanimator.php:175
 msgid "FTP upload has failed!"
-msgstr ""
+msgstr "Hochladen der Dateien schlug fehl!"
 
 #: adminpanel.php:48
 msgid "You have no GIF Support in your GDLib. This Plugin will not work!"
 msgstr ""
+"Du hast keine Unterstützung für GIF Dateien in deiner GDLib. Dieses Plugin "
+"kann dadurch nicht korrekt arbeiten!"
 
 #: adminpanel.php:56
 msgid "WP-HeadlineAnimator - Settings"
-msgstr ""
+msgstr "WP-HeadlineAnimator - Einstellungen"
 
 #: adminpanel.php:58
 msgid ""
 "Welcome to the settings page for WP-HeadlineAnimator. You are able to "
 "configure the plugin to your needs. "
 msgstr ""
+"Willkommen auf der Seite für die Einstellungen des WP-HeadlineAnimators. "
+"Hier lässt sich das Verhalten des Plugins auf deine Bedürfnisse anpassen."
 
 #: adminpanel.php:59
 msgid "For more information visit <a href=\"%s\" target=\"_blank\">this page</a>."
 msgstr ""
+"Mehr Informationen erhälst du auf <a href=\"%s\" target=\"_blank\">dieser "
+"Seite</a>."
 
 #: adminpanel.php:60
 msgid ""
 "If you found a bug, please report it at <a href=\"%s\" "
 "target=\"_blank\">this page</a>."
 msgstr ""
+"Wenn du einen Fehler gefunden hast, bitte melde ihn auf <a href=\"%s\" "
+"target=\"_blank\">dieser Seite</a>."
 
 #: adminpanel.php:62
 msgid "Settings updated."
-msgstr ""
+msgstr "Einstellungen aktualisiert."
 
 #: adminpanel.php:64
 msgid "Settings"
-msgstr ""
+msgstr "Einstellungen"
 
 #: adminpanel.php:70
 msgid "Image Settings:"
-msgstr ""
+msgstr "Bild-Einstellungen:"
 
 #: adminpanel.php:73
 msgid "Background image:"
-msgstr ""
+msgstr "Hintergrundbild:"
 
 #: adminpanel.php:78 adminpanel.php:97
 msgid "(relative to your WP install)"
-msgstr ""
+msgstr "(relativ zu deiner WP-Installation)"
 
 #: adminpanel.php:81
 msgid "Font file:"
-msgstr ""
+msgstr "Schriften-Datei:"
 
 #: adminpanel.php:86
 msgid ""
 "If your TTF file is in the same directory as this plugin, I am expecting it "
 "here: %s"
 msgstr ""
+"Wenn sich deine Schriften-Datei im selben Ordner wie dieses Plugin befindet,"
+" erwarte ich sie unter %s."
 
 #: adminpanel.php:89
 msgid "Storage Settings:"
-msgstr ""
+msgstr "Speicher-Einstellungen:"
 
 #: adminpanel.php:92
 msgid "Filename of the HeadlineAnimator:"
-msgstr ""
+msgstr "Dateinamen des HeadlineAnimators:"
 
 #: adminpanel.php:100
 msgid "Store animator on remote FTP Server"
-msgstr ""
+msgstr "Den Animator auf einem FTP Server ablegen"
 
 #: adminpanel.php:104
 msgid "Remote FTP Host:"
-msgstr ""
+msgstr "FTP-Server:"
 
 #: adminpanel.php:109
 msgid "FTP User:"
-msgstr ""
+msgstr "Benutzername:"
 
 #: adminpanel.php:114
 msgid "FTP Password:"
-msgstr ""
+msgstr "Passwort:"
 
 #: adminpanel.php:119
 msgid "FTP path and target:"
-msgstr ""
+msgstr "Pfad und Ziel:"
 
 #: adminpanel.php:124
 msgid "(remote path starting with \"/\")"
-msgstr ""
+msgstr "(Der Pfad muss mit \"/\" beginnen)"
 
 #: adminpanel.php:128
 msgid "Design Settings:"
-msgstr ""
+msgstr "Design-Einstellungen:"
 
 #: adminpanel.php:131
 msgid "Text on Picture:"
-msgstr ""
+msgstr "Text am Bild:"
 
 #: adminpanel.php:136
 msgid "Text color:"
-msgstr ""
+msgstr "Textfarbe:"
 
 #: adminpanel.php:141
 msgid "(HTML Notation like #740204)"
-msgstr ""
+msgstr "(HTML Notation wie z.B. #740204)"
 
 #: adminpanel.php:144
 msgid "Text size:"
-msgstr ""
+msgstr "Schriftgröße:"
 
 #: adminpanel.php:149
 msgid "Newstext size:"
-msgstr ""
+msgstr "Schriftgröße der Nachrichten:"
 
 #: adminpanel.php:155
 msgid "Advanced Configuration"
-msgstr ""
+msgstr "Erweiterte Einstellungen"
 
 #: adminpanel.php:160
 msgid "Show date on animator"
-msgstr ""
+msgstr "Zeige Datum in der Grafik"
 
 #: adminpanel.php:165
 msgid "Date format:"
-msgstr ""
+msgstr "Datumsformat:"
 
 #: adminpanel.php:170
 msgid "see php manual for <a href=\"%s\" target=\"_blank\">date()</a>."
-msgstr ""
+msgstr "siehe php-Dokumentation zu <a href=\"%s\" target=\"_blank\">date()</a>."
 
 #: adminpanel.php:174
 msgid "Headlines to display:"
-msgstr ""
+msgstr "anzuzeigende Überschriften:"
 
 #: adminpanel.php:179
 msgid "Headline display time (milliseconds):"
-msgstr ""
+msgstr "Zeit die eine Nachricht angezeigt werden soll (Millisekunden):"
 
 #: adminpanel.php:184
 msgid "Delay between headlines (milliseconds):"
-msgstr ""
+msgstr "Abstand zwischen den Überschriften (Millisekunden):"
 
 #: adminpanel.php:192
 msgid "Update Settings"
-msgstr ""
+msgstr "Einstellungen aktualisieren"
 
 #: adminpanel.php:198 adminpanel.php:200
 msgid "Integration"
-msgstr ""
+msgstr "Einbindung"
 
 #: adminpanel.php:202
 msgid "HTML Code for your Animator:"
-msgstr ""
+msgstr "HTML-Code zur Einbindung des Animators:"
 
 #: adminpanel.php:208
 msgid "bbCode for your Animator:"
-msgstr ""
+msgstr "bbCode zur Einbindung des Animators:"
 
 #: adminpanel.php:215
 msgid "Preview"
-msgstr ""
+msgstr "Vorschau"
 
 #. Plugin Name of the plugin/theme
 msgid "WP-HeadlineAnimator"
-msgstr ""
+msgstr "WP-HeadlineAnimator"
 
 #. Plugin URI of the plugin/theme
 msgid "http://www.stargazer.at/projekte"
-msgstr ""
+msgstr "http://www.stargazer.at/projekte"
 
 #. Description of the plugin/theme
 msgid ""
 "Generates a graphic like the FB Headline Animator. More info in my blog "
 "posts on my.stargazer.at..."
 msgstr ""
+"Erzeugt eine Grafik wie die FB Headline Animator. Mehr Infos in meinem Blog-"
+"Posts auf my.stargazer.at ..."
 
 #. Author of the plugin/theme
 msgid "Christoph \"Stargazer\" Bauer"
-msgstr ""
+msgstr "Christoph \"Stargazer\" Bauer"
 
 #. Author URI of the plugin/theme
 msgid "http://my.stargazer.at/"
-msgstr ""
+msgstr "http://my.stargazer.at/"
+
+
