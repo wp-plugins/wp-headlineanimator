@@ -2,7 +2,7 @@
 /**
  * @package WP-HeadlineAnimator-Admin
  * @author Christoph "Stargazer" Bauer
- * @version 1.7.2
+ * @version 1.7.3
  */
 /*
  * Function library used with WP-BlackCheck

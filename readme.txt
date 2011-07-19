@@ -98,6 +98,10 @@ Feel free to contact me. I'll extend the FAQ with your questions and provide sup
 
 == Changelog ==
 
+= 1.7.3 =
+* Style update
+* Translation fixes
+
 = 1.7.2 =
 * Style fix
 * readme updates
