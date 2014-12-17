@@ -3,7 +3,7 @@ Contributors: Stargazer
 Donate link: http://my.stargazer.at/wishlist/
 Tags: post,image,signature
 Requires at least: 2.9
-Tested up to: 3.9
+Tested up to: 4.1
 Stable tag: trunk
 
 
