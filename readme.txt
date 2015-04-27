@@ -1,9 +1,9 @@
 === WP-HeadlineAnimator ===
-Contributors: Stargazer
+Contributors: Viktoria Rei Bauer
 Donate link: http://my.stargazer.at/wishlist/
 Tags: post,image,signature
 Requires at least: 2.9
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: trunk
 
 
@@ -36,7 +36,7 @@ If you want to see this plugin in your language, feel free to contact me or use 
 = Links =
 * [Blog](http://my.stargazer.at/ "Authors blog")
 * [Bugtracker](http://bugs.stargazer.at/ "Bugtracker")
-* [Twitter](http://www.twitter.com/my_stargazer_at)
+* [Twitter](http://www.twitter.com/ToeiRei)
 
 
 == Installation ==
