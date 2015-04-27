@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WP-HeadlineAnimator
- * @author Christoph "Stargazer" Bauer
+ * @author Viktoria Rei Bauer
  * @version 1.7.3
  */
 /*
@@ -9,12 +9,10 @@
  Plugin URI: http://www.stargazer.at/projekte
  Description: Generates a graphic like the FB Headline Animator. More info in my blog posts on my.stargazer.at...
  Version: 1.7.3
- Author: Christoph "Stargazer" Bauer
+ Author: Viktoria Rei Bauer
  Author URI: http://my.stargazer.at/
 
- Author URI: http://my.stargazer.at/
-
- Copyright 2011 Christoph Bauer  (email : cbauer@stargazer.at)
+ Copyright 2011 Viktoria Rei Bauer  (email : headlineanimator@stargazer.at)
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License, version 2, as

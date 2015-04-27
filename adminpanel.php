@@ -1,13 +1,13 @@
 <?php
 /**
  * @package WP-HeadlineAnimator-Admin
- * @author Christoph "Stargazer" Bauer
+ * @author Viktoria Rei Bauer
  * @version 1.7.3
  */
 /*
  * Function library used with WP-BlackCheck
  *
- * Copyright 2011 Christoph Bauer  (email : cbauer@stargazer.at)
+ * Copyright 2011 Viktoria Rei Bauer (email : headlineanimator@stargazer.at)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as
